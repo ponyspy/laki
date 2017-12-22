@@ -1,0 +1,23 @@
+mixin items(shops)
+	each shop in shops
+		.list_item
+			a.item_rm.shop(href='#', id=shop._id) -- удалить
+			a.item_title(href='/admin/shops/edit/' + shop._id, class=shop.status =='hidden' ? 'hidden': '')= (shop.i18n.street.get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!')
+
+mixin counters(count, skip)
+	a.list_back(href='#'): b назад
+	span= ' - '
+	select.list_select
+		- var i = 0;
+		while i < count
+			option(value=i selected= (i == skip / 10) )= i+1
+			- i++
+	span= ' - '
+	a.list_next(href='#'): b вперед
+
+
+if load_list
+	.list_items
+		+items(shops)
+	.list_counter
+		+counters(count, skip)

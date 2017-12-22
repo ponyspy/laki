@@ -1,0 +1,23 @@
+mixin items(directions)
+	each direction in directions
+		.list_item
+			a.item_rm.direction(href='#', id=direction._id) -- удалить
+			a.item_title(href='/admin/directions/edit/' + direction._id, class=direction.status =='hidden' ? 'hidden': '')= (direction.i18n.title.get('ru') || '!!! ПУСТОЕ ПОЛЕ !!!')
+
+mixin counters(count, skip)
+	a.list_back(href='#'): b назад
+	span= ' - '
+	select.list_select
+		- var i = 0;
+		while i < count
+			option(value=i selected= (i == skip / 10) )= i+1
+			- i++
+	span= ' - '
+	a.list_next(href='#'): b вперед
+
+
+if load_list
+	.list_items
+		+items(directions)
+	.list_counter
+		+counters(count, skip)

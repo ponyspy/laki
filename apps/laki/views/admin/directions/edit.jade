@@ -1,0 +1,40 @@
+extends ../layout
+include ../_forms.jade
+
+block header_meta
+	- var content_title= 'РЕДАКТИРОВАТЬ СОБЫТИЕ'
+
+block header_include
+	- var include_libs_css = ['pickmeup.min.css', 'font-awesome.css', 'wysiwyg-editor.min.css']
+	- var include_css = ['add.css']
+	- var include_libs_js = ['jquery.pickmeup.min.js', 'wysiwyg.min.js', 'wysiwyg-editor.min.js']
+	- var include_js = ['editor.js', 'add.js', 'a_events.js']
+
+block sub_menu
+	a.sub_item.back_link(href='/admin/events') Назад
+	span.sub_item.toggle_eng Перевод
+	.sub_right_block
+		input.form_cancel(type='submit', value='Отменить')
+		input.form_submit(type='submit', value='Сохранить')
+
+block content
+	.form_block
+		.title= content_title
+		form(action="", method="post", enctype="multipart/form-data")
+			.form_title Название:
+			+form_text_single('title', direction)
+			.form_title Описание:
+			+form_text_multi('description', direction)
+			.form_title Обложка:
+			+form_single_file('poster', direction)(accept='image/jpeg,image/png,image/gif')
+			.form_title Колонки на главной:
+			select(name='main_columns')
+				option(name='1', selected= direction.main_columns == 1) 1
+				option(name='2', selected= direction.main_columns == 2) 2
+				option(name='3', selected= direction.main_columns == 3) 3
+			.form_title Статус:
+			select(name='status')
+				option(value='base') Обычный
+				option(value='hidden', selected= direction.status == 'hidden' && 'hidden') Скрытый
+			.form_title Дата публикации:
+			+form_date('date', direction.date)
