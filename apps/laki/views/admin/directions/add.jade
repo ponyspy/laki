@@ -27,6 +27,8 @@ block content
 			+form_text_multi('description')
 			.form_title Обложка:
 			+form_single_file('poster')(accept='image/jpeg,image/png,image/gif')
+			.form_title Коллекции:
+			+form_multiple_select('collects', collects)
 			.form_title Колонки на главной:
 			select(name='main_columns')
 				option(name='1') 1

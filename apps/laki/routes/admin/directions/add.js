@@ -5,13 +5,18 @@ module.exports = function(Model, Params) {
 	var module = {};
 
 	var Direction = Model.Direction;
+	var Collect = Model.Collect;
 
 	var checkNested = Params.locale.checkNested;
 	var uploadImage = Params.upload.image;
 
 
 	module.index = function(req, res, next) {
-		res.render('admin/directions/add.jade');
+		Collect.find().sort('-date').exec(function(err, collects) {
+			if (err) return next(err);
+
+			res.render('admin/directions/add.jade', {collects: collects});
+		});
 	};
 
 
@@ -25,6 +30,7 @@ module.exports = function(Model, Params) {
 		direction.status = post.status;
 		direction.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		direction.collects = post.collects;
+		direction.main_columns = post.main_columns;
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 
@@ -37,7 +43,7 @@ module.exports = function(Model, Params) {
 
 		});
 
-		uploadImage(collect, 'collects', 'poster', 600, files.poster && files.poster[0], null, function(err) {
+		uploadImage(direction, 'directions', 'poster', 600, files.poster && files.poster[0], null, function(err) {
 			if (err) return next(err);
 
 			direction.save(function(err, direction) {

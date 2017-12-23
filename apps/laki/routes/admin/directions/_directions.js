@@ -25,7 +25,7 @@ module.exports = (function() {
 		.get(directions.add.index)
 		.post(directions.add.form);
 
-	router.route('/edit/:event_id')
+	router.route('/edit/:direction_id')
 		.get(directions.edit.index)
 		.post(directions.edit.form);
 
