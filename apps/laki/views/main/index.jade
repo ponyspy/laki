@@ -1,8 +1,8 @@
 extends layout
 
 block header_meta
-	- var content_title= __('KOSMOS')
-	- var content_description= __('Architectural office which collaborates virtually between Moscow, Basel, New York and Bangkok.')
+	- var content_title= 'xDance Design'
+	- var content_description = ''
 	- var menu_active = 'main'
 
 block header_include
@@ -10,6 +10,4 @@ block header_include
 	- var include_js = ['main.js']
 
 block content
-	.posters_block
-		each poster in posters
-			img.poster_item(data-src=poster)
+	h1 Main!
