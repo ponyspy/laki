@@ -38,7 +38,6 @@ module.exports = function(Model, Params) {
 		Collect.findById(id).exec(function(err, collect) {
 			if (err) return next(err);
 
-			collect._short_id = shortid.generate();
 			collect.status = post.status;
 			collect.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 			collect.sym = post.sym ? post.sym : undefined;
