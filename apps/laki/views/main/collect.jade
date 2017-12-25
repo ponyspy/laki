@@ -13,4 +13,36 @@ block header_include
 	- var include_js = ['collect.js']
 
 block content
-	h1 Collection!
+	.collect_head
+		.collect_title Direction Title
+		.collect_quote Collection Quote
+
+	.collect_body
+		.collect_s_title Collect S Title
+		.collect_description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+	.collect_slider
+		each slide in new Array(6)
+			.slide_item
+
+	a.collect_buy(href='/buy') Приобрести
+
+	.collect_patterns
+		.patterns_title 96 оттенков
+		.patterns_slider
+			each slide in new Array(36)
+				.slide_item
+
+	.collect_recomends
+		.collect_recomends_title Рекомендации по нанесению
+		.collect_recomends_desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+	.blog_cut Рассказываю о создании коллекций и приглашаю к обсуждению в свой блог
+
+	.sim_collects
+		.sim_title Другие коллекции
+		.sim_items
+			each item in new Array(6)
+				.sim_item
+					.sim_title Sim Title
+					.sim_photo

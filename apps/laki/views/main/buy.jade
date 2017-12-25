@@ -1,7 +1,7 @@
 extends layout
 
 block header_meta
-	- var content_title= 'Где купить?'
+	- var content_title= 'xDance Design' + ' | ' + 'Где купить?'
 	- var menu_active= 'buy'
 	- var content_description= ''
 
@@ -10,4 +10,23 @@ block header_include
 	- var include_js = ['buy.js']
 
 block content
-	h1 Buy!
+	.buy_head
+		.buy_phone Контактный телефон для оптовиков +7 903 741-06-33
+		a.buy_blank(href='#') Бланк заказа
+
+	.buy_shops
+		.shops_tile Адреса магазинов
+		.shops_list
+			each item in new Array(3)
+				.list_item
+		.shops_items
+			each item in new Array(6)
+				.shop_item
+					.shop_city
+					.shop_station
+					.shop_adress
+					.shop_time
+
+	.instagam_cut
+		.instagram_logo
+		.instagram_desc XDance S  Instagram

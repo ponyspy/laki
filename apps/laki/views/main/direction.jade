@@ -1,0 +1,36 @@
+extends layout
+
+block header_meta
+	- var content_title= 'xDance Design' + ' | Направление | ' + direction.i18n.title.get(locale)
+	- var content_description = direction.i18n.description.get(locale)
+	- var content_images = [direction.poster]
+
+block header_include
+	- var include_libs_css = ['swiper.min.css']
+	- var include_css = ['direction.css']
+	- var include_libs_js = ['swiper.jquery.min.js']
+	- var include_js = ['direction.js']
+
+block content
+	.direction_head
+		.direction_title Direction Title
+		.direction_description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+	.direction_collects
+		each collect in new Array(5)
+			.collect_item
+				.collect_title Collect Title
+				.collect_slider
+					each slide in new Array(6)
+						.slide_item
+				.collect_description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+	.blog_cut Рассказываю о создании коллекций и приглашаю к обсуждению в свой блог
+
+	.sim_collects
+		.sim_title Другие коллекции
+		.sim_items
+			each item in new Array(6)
+				.sim_item
+					.sim_title Sim Title
+					.sim_photo

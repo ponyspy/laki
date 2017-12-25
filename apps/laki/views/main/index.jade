@@ -3,11 +3,27 @@ extends layout
 block header_meta
 	- var content_title= 'xDance Design'
 	- var content_description = ''
-	- var menu_active = 'main'
 
 block header_include
+	- var include_libs_css = ['swiper.min.css']
 	- var include_css = ['main.css']
+	- var include_libs_js = ['swiper.jquery.min.js']
 	- var include_js = ['main.js']
 
 block content
-	h1 Main!
+	.slier_block
+		each slide in new Array(5)
+			.slide_item
+				.slide_title Slide Title
+				.slide_s_title Slide ad
+				.slide_quote Slide Quote
+
+	.directions_block
+		each direction in new Array(6)
+			.direction_item
+				.direction_title Direction Title
+				.directions_collects
+					each collect in new Array(5)
+						.coolect_item
+							.collect_title Collection Title
+							.collect_quote Collection quote
