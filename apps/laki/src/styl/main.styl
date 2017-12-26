@@ -36,12 +36,18 @@
 	width 100%
 	top 100%
 
+.content_inner
+	max-width 1240px
+	padding-left 0!important
+	padding-right 0!important
+
 .directions_block
 	background-color green
 	overflow hidden
 	.direction_item
 		margin 40px auto
 		.direction_title
+			margin-bottom 20px
 			text-align center
 			font-size 22pt
 		.direction_collects
@@ -53,14 +59,14 @@
 			&.x2 .collect_item
 				width 50%
 				.collect_image
-					width 95%
-					padding-top 95%
+					width 100%
+					padding-top 100%
 					box-sizing border-box
 			&.x3 .collect_item
 				width 33.3333333333%
 				.collect_image
-					width 95%
-					padding-top 95%
+					width 100%
+					padding-top 100%
 					box-sizing border-box
 			.collect_item
 				float left
@@ -72,6 +78,14 @@
 					background-color rgb(243, 153, 219)
 					position relative
 					margin 0 auto
+					.image_in
+						top 20px
+						left 20px
+						right 20px
+						bottom 20px
+						position absolute
+						margin auto
+						background-color rgb(37, 86, 125)
 					.quote
 						top 0
 						position absolute
