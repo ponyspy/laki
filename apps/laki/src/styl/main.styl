@@ -38,3 +38,40 @@
 
 .directions_block
 	background-color green
+	overflow hidden
+	.direction_item
+		margin 40px auto
+		.direction_title
+			text-align center
+			font-size 22pt
+		.direction_collects
+			overflow hidden
+			&.x1 .collect_item
+				width 100%
+				.collect_image
+					padding-top 30%
+			&.x2 .collect_item
+				width 50%
+				.collect_image
+					width 95%
+					padding-top 95%
+					box-sizing border-box
+			&.x3 .collect_item
+				width 33.3333333333%
+				.collect_image
+					width 95%
+					padding-top 95%
+					box-sizing border-box
+			.collect_item
+				float left
+				margin-bottom 20px
+				background-color rgb(101, 102, 107)
+				.collect_title
+					text-align center
+				.collect_image
+					background-color rgb(243, 153, 219)
+					position relative
+					margin 0 auto
+					.quote
+						top 0
+						position absolute
