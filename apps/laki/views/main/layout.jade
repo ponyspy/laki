@@ -5,11 +5,13 @@ html
 	body(class=menu_active)
 		.main_block
 			.title_block
-				a.logo(href='/') xDance
+				a.logo(href='/')
+					img(src='/stuff/laki/icons/logo/main.png')
+					span By Lena Latash
 				.menu_block
-					span: a.hidden(href='/concept', class=menu_active == 'concept' ? 'active' : '') Концепция
-					span: a.hidden(href='/buy', class=menu_active == 'buy' ? 'active' : '') Где купить?
-					span: a.hidden(href='/blog', class=menu_active == 'blog' ? 'blog' : '') Блог
+					a.hidden(href='/concept', class=menu_active == 'concept' ? 'active' : '') Концепция
+					a.hidden(href='/buy', class=menu_active == 'buy' ? 'active' : '') Где купить?
+					a.hidden(href='/blog', class=menu_active == 'blog' ? 'blog' : '') Блог
 				if (session && session.user_id)
 					.stargazer_block
 							a(href='/auth') stargazer
