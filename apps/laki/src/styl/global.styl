@@ -5,22 +5,34 @@
 html, body
 	margin 0
 	padding 0
+	height 100%
 	font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-.main_block
-	max-width 1200px
-	padding-left 20px
-	padding-right 20px
-	margin 0 auto
-	background-color lightgrey
+.maket_block
+	height 100%
 
 .title_block
 	overflow hidden
 	background-color grey
 	z-index 999999
-	position relative
+	position absolute
 	width 100%
+	z-index 99999999
+	top 0
+
+.content_block
+	background-color lightgrey
+
+.footer_block
+	background-color maroon
+	height 80px
+
+.footer_inner, .content_inner, .title_inner
+	max-width 1200px
+	padding-left 20px
+	padding-right 20px
+	margin 0 auto
 
 .logo
 	float left
@@ -32,14 +44,10 @@ html, body
 		float left
 		display block
 		width 200px
+		background-color rgb(185, 213, 237)
 
 .menu_block
 	float right
 	margin-top 40px
 	a
 		margin-left 40px
-
-
-.footer_block
-	background-color maroon
-	height 80px

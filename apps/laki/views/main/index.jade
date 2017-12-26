@@ -10,7 +10,7 @@ block header_include
 	- var include_libs_js = ['swiper.jquery.min.js']
 	- var include_js = ['main.js']
 
-block content
+block slider
 	.slider_block.swiper-container
 		.swiper-wrapper
 			each slide in new Array(5)
@@ -20,6 +20,7 @@ block content
 					.slide_quote Slide Quote
 		.swiper-pagination
 
+block content
 	.directions_block
 		each direction in new Array(6)
 			.direction_item

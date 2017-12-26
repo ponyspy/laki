@@ -3,8 +3,8 @@ html
 	head
 		include header
 	body(class=menu_active)
-		.main_block
-			.title_block
+		.maket_block
+			.title_block: .title_inner
 				a.logo(href='/')
 					img(src='/stuff/laki/icons/logo/main.png')
 					span By Lena Latash
@@ -17,9 +17,11 @@ html
 							a(href='/auth') stargazer
 							span= ' | '
 							a(href='/auth/logout') выход
-			.content_block
-				block content
-			.footer_block
-				span xDance тм является зарегистрированным товарным знаком ООО «ОЛБО».
-				span Все права защищены.
+			block slider
+			.main_block
+				.content_block: .content_inner
+					block content
+				.footer_block: .footer_inner
+					div xDance тм является зарегистрированным товарным знаком ООО «ОЛБО».
+					div Все права защищены.
 		include counters
