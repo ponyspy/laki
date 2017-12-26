@@ -10,15 +10,16 @@ block header_include
 	- var include_libs_js = ['swiper.jquery.min.js']
 	- var include_js = ['main.js']
 
-block slider
-	.slider_block.swiper-container
-		.swiper-wrapper
-			each slide in new Array(5)
-				.slide_item.swiper-slide: .slide_inner
-					.slide_title Slide Title
-					.slide_s_title Slide ad
-					.slide_quote Slide Quote
-		.swiper-pagination
+block over
+	.over_block
+		.slider_block.swiper-container
+			.swiper-wrapper
+				each slide in new Array(5)
+					.slide_item.swiper-slide: .slide_inner
+						.slide_title Slide Title
+						.slide_s_title Slide ad
+						.slide_quote Slide Quote
+			.swiper-pagination
 
 block content
 	.directions_block
