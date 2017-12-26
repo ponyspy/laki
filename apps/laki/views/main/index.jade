@@ -7,7 +7,7 @@ block header_meta
 block header_include
 	- var include_libs_css = ['swiper.min.css']
 	- var include_css = ['main.css']
-	- var include_libs_js = ['swiper.jquery.min.js']
+	- var include_libs_js = ['swiper.min.js']
 	- var include_js = ['main.js']
 
 block over
@@ -19,7 +19,7 @@ block over
 						.slide_title Slide Title
 						.slide_s_title Slide ad
 						.slide_quote Slide Quote
-			.swiper-pagination
+			.swiper-pagination.swiper-pagination-white
 
 block content
 	.directions_block
@@ -30,7 +30,7 @@ block content
 					.collect_item
 						.collect_title Collection Title
 						.collect_image: .image_in
-							.quote Collection quote
+							.quote: span Лак как дорогое украшение — почему бы нет?
 
 		.direction_item
 			.direction_title Direction Title 2
@@ -39,7 +39,7 @@ block content
 					.collect_item
 						.collect_title Collection Title
 						.collect_image: .image_in
-							.quote Collection quote
+							.quote: span Лак как дорогое украшение — почему бы нет?
 
 		.direction_item
 			.direction_title Direction Title 3
@@ -48,4 +48,4 @@ block content
 					.collect_item
 						.collect_title Collection Title
 						.collect_image: .image_in
-							.quote Collection quote
+							.quote: span Лак как дорогое украшение — почему бы нет?
