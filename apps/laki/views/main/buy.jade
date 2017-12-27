@@ -1,7 +1,8 @@
+include _cuts.jade
 extends layout
 
 block header_meta
-	- var content_title= 'xDance Design' + ' | ' + 'Где купить?'
+	- var content_title= 'xDance Sky' + ' | ' + 'Где купить?'
 	- var menu_active= 'buy'
 	- var content_description= ''
 
@@ -27,6 +28,4 @@ block content
 					.shop_adress
 					.shop_time
 
-	.instagam_cut
-		.instagram_logo
-		.instagram_desc XDance S  Instagram
+	+instagram_cut()

@@ -1,7 +1,8 @@
+include _cuts.jade
 extends layout
 
 block header_meta
-	- var content_title= 'xDance Design' + ' | Коллекция | ' + collect.i18n.title.get(locale)
+	- var content_title= 'xDance Sky' + ' | Коллекция | ' + collect.i18n.title.get(locale)
 	- var content_description = collect.i18n.s_title.get(locale)
 	- var content_images = [collect.poster]
 	- var menu_active = 'collect'
@@ -37,7 +38,7 @@ block content
 		.collect_recomends_title Рекомендации по нанесению
 		.collect_recomends_desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-	.blog_cut Рассказываю о создании коллекций и приглашаю к обсуждению в свой блог
+	+blog_cut()
 
 	.sim_collects
 		.sim_title Другие коллекции

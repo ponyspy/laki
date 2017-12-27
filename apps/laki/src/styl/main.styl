@@ -1,6 +1,10 @@
 @media screen and (max-width: 680px)
 	@import 'mobile/_main.styl'
 
+.blog_cut
+	margin-left 20px
+	margin-right 20px
+
 .over_block
 	position absolute
 	top 0
@@ -23,11 +27,12 @@
 			margin 120px auto
 			position relative
 			.slide_title
-				font-size 40pt
+				font 40pt/42pt 'RegalTextPro Med'
 			.slide_s_title
-				font-size 20pt
+				margin-top 20px
+				font 20pt/22pt 'RegalTextPro RegBold'
 			.slide_quote
-				font-size 20pt
+				font 20pt/22pt 'RegalTextPro RegBold'
 				position absolute
 				bottom 200px
 
@@ -49,7 +54,7 @@
 		.direction_title
 			margin-bottom 20px
 			text-align center
-			font-size 16pt
+			font 18pt/20pt 'RegalTextPro Med'
 		.direction_collects
 			overflow hidden
 			&.x1 .collect_item
@@ -68,6 +73,8 @@
 					width 100%
 					padding-top 100%
 					box-sizing border-box
+				.collect_title
+					font 32pt/32pt 'RegalTextPro Med'
 			.collect_item
 				display block
 				float left
@@ -77,7 +84,10 @@
 				text-decoration none
 				.collect_title
 					text-align center
-					font-size 32pt
+					font 42pt/42pt 'RegalTextPro Med'
+					span
+						padding-left 20px
+						padding-right 20px
 				.collect_image
 					background-color rgb(243, 153, 219)
 					position relative
@@ -108,6 +118,6 @@
 						opacity 0
 						span
 							color white
-							font-size 22pt
+							font 22pt/24pt 'RegalTextPro Med'
 							display table-cell
 							vertical-align middle
