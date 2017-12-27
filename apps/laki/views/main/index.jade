@@ -24,33 +24,47 @@ block over
 
 block content
 	.directions_block
-		.direction_item
-			.direction_title Мультихромные и голографические лаки
-			.direction_collects.x1
-				each collect in new Array(2)
-					a.collect_item(href='#')
-						.collect_title: span Solaris
-						.collect_image: .image_in
-							.quote: span Лак как дорогое украшение — почему бы нет?
+		each direction, i in directions
+			.direction_item
+				.direction_title= direction.i18n.title.get(locale)
+				.direction_collects(class='x' + direction.main_columns)
+					each collect in direction.collects
+						a.collect_item(href='#')
+							.collect_title: span= collect.i18n.title.get(locale)
+							.collect_image: .image_in(style='background-image: url(' + collect.poster + ')')
+								.quote: span= collect.i18n.quote.get(locale)
+			if i == 2
+				+blog_cut_two()
+			if i == 4
+				+instagram_cut()
 
-		+blog_cut_two()
+		//- .direction_item
+		//- 	.direction_title Мультихромные и голографические лаки
+		//- 	.direction_collects.x1
+		//- 		each collect in new Array(2)
+		//- 			a.collect_item(href='#')
+		//- 				.collect_title: span Solaris
+		//- 				.collect_image: .image_in
+		//- 					.quote: span Лак как дорогое украшение — почему бы нет?
 
-		.direction_item
-			.direction_title Эмали – классика в новом исполнении
-			.direction_collects.x2
-				each collect in new Array(2)
-					a.collect_item(href='#')
-						.collect_title: span Camerton
-						.collect_image: .image_in
-							.quote: span Лак как дорогое украшение — почему бы нет?
+		//- +blog_cut_two()
 
-		+instagram_cut()
+		//- .direction_item
+		//- 	.direction_title Эмали – классика в новом исполнении
+		//- 	.direction_collects.x2
+		//- 		each collect in new Array(2)
+		//- 			a.collect_item(href='#')
+		//- 				.collect_title: span Camerton
+		//- 				.collect_image: .image_in
+		//- 					.quote: span Лак как дорогое украшение — почему бы нет?
 
-		.direction_item
-			.direction_title Текстурные лаки
-			.direction_collects.x3
-				each collect in new Array(6)
-					a.collect_item(href='#')
-						.collect_title: span Sandy fantasy
-						.collect_image: .image_in
-							.quote: span Лак как дорогое украшение — почему бы нет?
+		//- +instagram_cut()
+
+		//- .direction_item
+		//- 	.direction_title Текстурные лаки
+		//- 	.direction_collects.x3
+		//- 		each collect in new Array(6)
+		//- 			a.collect_item(href='#')
+		//- 				.collect_title: span Sandy fantasy
+		//- 				.collect_image: .image_in
+		//- 					.quote: span Лак как дорогое украшение — почему бы нет?

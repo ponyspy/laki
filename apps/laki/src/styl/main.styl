@@ -100,9 +100,14 @@
 						position absolute
 						margin auto
 						background-color rgb(37, 86, 125)
-						&:hover .quote
-							opacity 1
-							transition .2s opacity ease-in
+						background-size cover
+						background-position center
+						background-repeat no-repeat
+						&:hover
+							filter: blur(5px)
+							.quote
+								opacity 1
+								transition .2s opacity ease-in
 					.quote
 						transition .2s opacity ease-out
 						text-align center
@@ -113,7 +118,7 @@
 						bottom 0
 						margin auto
 						position absolute
-						background-color red
+						// background-color red
 						display table
 						opacity 0
 						span
