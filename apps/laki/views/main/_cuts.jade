@@ -1,16 +1,16 @@
 mixin instagram_cut()
-	.instagam_cut
-		img.instagram_logo(src='/stuff/laki/icons/logo/instagram.png')
-		.instagram_desc XDance Sky Instagram
+	.cut.instagram
+		img.instagram_logo(src='/stuff/laki/icons/social/instagram.png')
+		a.instagram_desc(href='#') XDance Sky Instagram
 
 mixin blog_cut()
-	.blog_cut
+	.cut.blog
 		span= 'Читайте экспертный '
 		a(href='/blog')= 'блог'
 		span= ' Лены Латаш'
 
 mixin blog_cut_two()
-	.blog_cut
+	.cut.blog
 		span= 'Читайте экспертный '
 		a(href='/blog')= 'блог'
 		span= ' Лены Латаш'
