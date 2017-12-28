@@ -35,10 +35,10 @@ module.exports = (function() {
 	router.route('/concept')
 		.get(main.concept.index);
 
-	// router.route('/lang/:locale').get(function(req, res) {
-	// 	res.cookie('locale', req.params.locale);
-	// 	res.redirect('back');
-	// });
+	router.route('/lang/:locale').get(function(req, res) {
+		res.cookie('locale', req.params.locale);
+		res.redirect('back');
+	});
 
 	router.route('/sitemap.xml')
 		.get(main.options.sitemap);

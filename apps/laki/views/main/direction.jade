@@ -2,7 +2,7 @@ include _cuts.jade
 extends layout
 
 block header_meta
-	- var content_title= 'xDance Sky' + ' | Направление | ' + direction.i18n.title.get(locale)
+	- var content_title= 'xDance Sky' + ' | ' + __('Направление') + ' | ' + direction.i18n.title.get(locale)
 	- var content_description = direction.i18n.description.get(locale)
 	- var content_images = [direction.poster]
 
@@ -29,7 +29,7 @@ block content
 	+blog_cut()
 
 	.sim_collects
-		.sim_title Другие коллекции
+		.sim_title= __('Другие коллекции')
 		.sim_items
 			each item in new Array(6)
 				.sim_item
