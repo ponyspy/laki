@@ -14,6 +14,9 @@ block header_include
 block over
 	.over_block
 		.slider_block.swiper-container
+			.slider_arrows
+				.swiper-button-next.swiper-button-white
+				.swiper-button-prev.swiper-button-white
 			.swiper-wrapper
 				each slide in collects
 					.slide_item.swiper-slide(style='background-image: url(' + slide.poster + ')')
@@ -24,10 +27,10 @@ block over
 			.swiper-pagination.swiper-pagination-white
 
 block content
-	.directions_block
+	.directions_block#collectios
 		each direction, i in directions
 			.direction_item
-				.direction_title= direction.i18n.title.get(locale)
+				a.direction_title(href='#'): span= direction.i18n.title.get(locale)
 				.direction_collects(class='x' + direction.main_columns)
 					each collect in direction.collects
 						a.collect_item(href='#')

@@ -9,9 +9,10 @@ html
 					img(src='/stuff/laki/icons/logo/main_w.png')
 					span By Lena Latash
 				.menu_block
-					a.hidden(href='/concept', class=menu_active == 'concept' ? 'active' : '') Концепция
-					a.hidden(href='/blog', class=menu_active == 'blog' ? 'blog' : '') Блог
-					a.hidden(href='/buy', class=menu_active == 'buy' ? 'active' : '') Где купить?
+					a.hidden(href='/#collectios') Коллекции
+					a.hidden(href='/concept') Концепция
+					a.hidden(href='/blog') Блог
+					a.hidden(href='/buy') Где купить?
 				if (session && session.user_id)
 					.stargazer_block
 							a(href='/auth') stargazer

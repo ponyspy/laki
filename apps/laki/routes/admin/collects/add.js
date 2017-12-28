@@ -53,8 +53,8 @@ module.exports = function(Model, Params) {
 
 		async.series([
 			async.apply(uploadImages, collect, 'collects', null, post.images),
-			async.apply(uploadImage, collect, 'collects', 'poster', 600, files.poster && files.poster[0], null),
-			async.apply(uploadImage, collect, 'collects', 'poster_hover', 600, files.poster_hover && files.poster_hover[0], null),
+			async.apply(uploadImage, collect, 'collects', 'poster', 1920, files.poster && files.poster[0], null),
+			async.apply(uploadImage, collect, 'collects', 'poster_hover', 1920, files.poster_hover && files.poster_hover[0], null),
 			async.apply(filesUpload, collect, 'collects', 'files', post, files),
 		], function(err, results) {
 			if (err) return next(err);

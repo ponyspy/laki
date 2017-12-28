@@ -50,7 +50,7 @@ module.exports = function(Model, Params) {
 
 			});
 
-			uploadImage(direction, 'directions', 'poster', 600, files.poster && files.poster[0], post.poster_del, function(err) {
+			uploadImage(direction, 'directions', 'poster', 1920, files.poster && files.poster[0], post.poster_del, function(err) {
 				if (err) return next(err);
 
 				direction.save(function(err, direction) {
