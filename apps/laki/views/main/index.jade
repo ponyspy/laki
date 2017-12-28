@@ -33,7 +33,7 @@ block content
 				a.direction_title(href='/directions/' + direction._short_id): span= direction.i18n.title.get(locale)
 				.direction_collects(class='x' + direction.main_columns)
 					each collect in direction.collects
-						a.collect_item(href='/collections/' + direction._short_id)
+						a.collect_item(href='/collections/' + collect._short_id)
 							.collect_title: span= collect.i18n.title.get(locale)
 							.collect_image: .image_in
 								.image(style='background-image: url(' + collect.poster + ')')
