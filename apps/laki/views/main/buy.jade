@@ -10,22 +10,24 @@ block header_include
 	- var include_css = ['buy.css']
 	- var include_js = ['buy.js']
 
-block content
-	.buy_head
-		.buy_phone Контактный телефон для оптовиков +7 903 741-06-33
-		a.buy_blank(href='#') Бланк заказа
+block over
+	.over_block: .buy_head
+		.buy_phone= __('Контактный телефон для оптовиков:') + ' ' + '+7 903 741-06-33'
+		a.buy_blank(href='#')= __('Бланк заказа')
 
+block content
 	.buy_shops
-		.shops_tile Адреса магазинов
+		.shops_tile= __('Адреса магазинов')
 		.shops_list
 			each item in new Array(3)
 				.list_item
 		.shops_items
 			each item in new Array(6)
 				.shop_item
-					.shop_city
-					.shop_station
-					.shop_adress
-					.shop_time
+					.shop_city г. Москва
+					.shop_station ст. м. Проспект Мира
+					.shop_adress ул. Достоевского д3
+					.shop_apartment ТК Дубровка, ряд 9, павильон 197
+					.shop_time 8:00 - 16:20
 
 	+instagram_cut()

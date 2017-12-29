@@ -1,4 +1,12 @@
 $(function() {
+	$('.coll').on('click', function(e) {
+		e.preventDefault();
+
+		$('body').animate({
+			'scrollTop': $('.content_block').offset().top
+		});
+	});
+
 	var swiper = new Swiper('.swiper-container', {
 		pagination: {
 			clickable: true,

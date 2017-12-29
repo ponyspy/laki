@@ -13,6 +13,7 @@ module.exports = function(Model, Params) {
 
 		Shop.findById(id).exec(function(err, shop) {
 			if (err) return next(err);
+			console.log(shop)
 
 			res.render('admin/shops/edit.jade', { shop: shop });
 		});
@@ -44,6 +45,10 @@ module.exports = function(Model, Params) {
 
 				checkNested(post, [locale, 'street'])
 					&& shop.setPropertyLocalised('street', post[locale].street, locale);
+
+				checkNested(post, [locale, 'apartment'])
+					&& shop.setPropertyLocalised('apartment', post[locale].apartment, locale);
+
 			});
 
 			shop.save(function(err, shop) {

@@ -61,6 +61,7 @@ var shopSchema = new Schema({
 	city: { type: String, trim: true, locale: true },
 	station: { type: String, trim: true, locale: true },
 	street: { type: String, trim: true, locale: true },
+	apartment: { type: String, trim: true, locale: true },
 	time: String,
 	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },
