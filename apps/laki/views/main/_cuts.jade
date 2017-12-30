@@ -5,11 +5,7 @@ mixin instagram_cut()
 
 mixin blog_cut()
 	.cut.blog
-		span= 'Читайте экспертный '
-		a(href='/blog')= 'блог'
-		span= ' Лены Латаш'
-
-mixin blog_cut_two()
-	.cut.blog
-		span= 'Рассказываю о создании коллекций и приглашаю к обсуждению в свой '
-		a(href='/blog')= 'блог'
+		if Math.random() >= 0.5
+			span!= __('Рассказываю о создании коллекций и приглашаю к обсуждению в свой <a href="/blog">блог</a>')
+		else
+			span!= __('Читайте экспертный <a href="/blog">блог</a> Елены Латаш')
