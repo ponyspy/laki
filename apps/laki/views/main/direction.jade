@@ -32,12 +32,14 @@ block content
 					.swiper-button-prev.swiper-button-white
 				.collect_description!= collect.i18n.description.get(locale)
 
-	+blog_cut()
+	+blog_cut_two()
 
 	.sim_collects
 		.sim_title= __('Другие коллекции')
 		.sim_items
 			each sim in sim_collects
 				a.sim_item(href='/collections/' + sim._short_id)
-					.sim_item_title= get_locale(sim.title, locale)
-					.sim_item_photo: .photo_inner(style='background-image: url(' + sim.poster + ')')
+					.sim_item_title: span= get_locale(sim.title, locale)
+					.sim_item_image
+						.image(style='background-image: url(' + sim.poster + ')')
+						.quote= get_locale(sim.quote, locale)
