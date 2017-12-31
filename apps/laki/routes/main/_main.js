@@ -2,10 +2,14 @@ var express = require('express');
 
 var Model = require(__glob_root + '/models/main.js');
 
+var Params = {
+	locale: require('./_params/locale')
+};
+
 var main = {
 	index: require('./index.js')(Model),
 	collects: require('./collects.js')(Model),
-	directions: require('./directions.js')(Model),
+	directions: require('./directions.js')(Model, Params),
 	concept: require('./concept.js')(),
 	buy: require('./buy.js')(Model),
 	options: require('./options.js')(Model)

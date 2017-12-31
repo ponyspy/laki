@@ -23,13 +23,13 @@ block content
 		each collect in direction.collects
 			.collect_item
 				.collect_title= collect.i18n.title.get(locale)
-				.collect_slider.swiper-container
-					.swiper-wrapper
+				.collect_slider
+					.swiper-container: .swiper-wrapper
 						each slide in collect.images
 							.slide_item.swiper-slide(style='background-image: url(' + slide.original + ')')
-					.swiper-pagination.swiper-pagination-white
-					.swiper-button-next.swiper-button-white
-					.swiper-button-prev.swiper-button-white
+					.swiper-pagination.swiper-pagination-black
+					.swiper-button-next.swiper-button-black
+					.swiper-button-prev.swiper-button-black
 				.collect_description!= collect.i18n.description.get(locale)
 
 	+blog_cut()

@@ -1,14 +1,12 @@
 var jade = require('jade');
 
-module.exports = function(Model) {
+module.exports = function(Model, Params) {
 	var module = {};
 
 	var Direction = Model.Direction;
 	var Collect = Model.Collect;
 
-	var get_locale = function(obj, locale) {
-		return obj.filter(function(item) { return item.lg == locale; })[0].value;
-	};
+	var get_locale = Params.locale.get_locale;
 
 	module.index = function(req, res) {
 		res.redirect('/');

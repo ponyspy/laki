@@ -1,15 +1,15 @@
 $(function() {
 	$('.swiper-container').each(function() {
-		var $this = $(this);
+		var $item = $(this).parent();
 
 		var swiper = new Swiper(this, {
 			pagination: {
 				clickable: true,
-				el: $this.children('.swiper-pagination')[0],
+				el: $item.find('.swiper-pagination')[0],
 			},
 			navigation: {
-				nextEl: $this.children('.swiper-button-next')[0],
-				prevEl: $this.children('.swiper-button-prev')[0],
+				nextEl: $item.find('.swiper-button-next')[0],
+				prevEl: $item.find('.swiper-button-prev')[0],
 			},
 		});
 	});
