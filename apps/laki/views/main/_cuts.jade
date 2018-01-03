@@ -3,9 +3,12 @@ mixin instagram_cut()
 		img.instagram_logo(src='/stuff/laki/icons/social/instagram.png')
 		a.instagram_desc(href='#') XDance Sky Instagram
 
-mixin blog_cut()
+mixin blog_cut(factor)
+	//- factor = 0 true
+	//- factor = 1 random
+	//- factor = 2 false
 	.cut.blog
-		if Math.random() >= 0.5
+		if Math.random() >= 0.5 * ((factor != undefined) ? factor : 1)
 			span!= __('Рассказываю о создании коллекций и приглашаю к обсуждению в свой <a href="/blog">блог</a>')
 		else
 			span!= __('Читайте экспертный <a href="/blog">блог</a> Елены Латаш')

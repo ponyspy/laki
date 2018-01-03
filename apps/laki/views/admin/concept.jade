@@ -1,0 +1,48 @@
+extends layout
+
+block header_meta
+	- var content_title= 'РЕДАКТИРОВАТЬ КОНЦЕПЦИЮ'
+
+block header_include
+	- var include_libs_css = ['font-awesome.css', 'wysiwyg-editor.min.css']
+	- var include_css = ['add.css']
+	- var include_libs_js = ['wysiwyg.min.js', 'wysiwyg-editor.min.js']
+	- var include_js = ['editor.js', 'add.js']
+
+block sub_menu
+	a.sub_item.back_link(href='/admin') Назад
+	span.sub_item.toggle_eng Перевод
+	a.sub_item(href='/concept', target='_blank') Превью
+	.sub_right_block
+		input.form_cancel(type='submit', value='Отменить')
+		input.form_submit(type='submit', value='Сохранить')
+
+block content
+	.form_block
+		.title= content_title
+		form(action='', method='post')
+			//- .form_title Портфолио (ссылка):
+			//- input(type='text', name='link', value= content.link)
+			.form_title Вступление:
+			.content
+				textarea.ru.editor(name='intro[ru]')= content.intro_ru
+				textarea.en.editor(name='intro[en]')= content.intro_en
+			.form_title Цитата:
+			input.ru(type='text', name='quote[ru]', value= content.quote_ru)
+			input.en(type='text', name='quote[en]', value= content.quote_en)
+			.form_title Описание:
+			.content
+				textarea.ru.editor(name='desc[ru]')= content.desc_ru
+				textarea.en.editor(name='desc[en]')= content.desc_en
+			.form_title Безопасность:
+			.content
+				textarea.ru.editor(name='secure[ru]')= content.secure_ru
+				textarea.en.editor(name='secure[en]')= content.secure_en
+			.form_title Стойкость:
+			.content
+				textarea.ru.editor(name='protect[ru]')= content.protect_ru
+				textarea.en.editor(name='protect[en]')= content.protect_en
+			.form_title Производство:
+			.content(style='overflow: hidden;')
+				textarea.ru.editor(name='develop[ru]')= content.develop_ru
+				textarea.en.editor(name='develop[en]')= content.develop_en

@@ -28,7 +28,7 @@ block content
 	a.collect_buy(href='/buy')= __('Приобрести')
 
 	.collect_patterns
-		.patterns_title 96 оттенков
+		.patterns_title= '96' + ' ' + __('оттенков')
 		.patterns_slider
 			each slide in new Array(36)
 				.slide_item

@@ -9,6 +9,7 @@ var admin = {
 	shops: require('./shops/_shops.js'),
 	directions: require('./directions/_directions.js'),
 	users: require('./users/_users.js'),
+	concept: require('./concept.js'),
 	options: require('./options.js')
 };
 
@@ -22,6 +23,10 @@ module.exports = (function() {
 	var router = express.Router();
 
 	router.route('/').get(checkAuth, admin.main.index);
+
+	router.route('/concept')
+		.get(checkAuth, admin.concept.edit)
+		.post(checkAuth, admin.concept.edit_form);
 
 	router.use('/collects', checkAuth, upload.fields([ { name: 'attach' }, { name: 'poster' }, { name: 'poster_hover' } ]), admin.collects);
 	router.use('/shops', checkAuth, admin.shops);
