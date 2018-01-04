@@ -11,16 +11,16 @@ html
 						a.ru(href='/lang/ru') рус
 					if locale == 'ru'
 						a.en(href='/lang/en') eng
-				.menu_block
-					a.coll(href='/#collections')= __('Коллекции')
-					a(href='/concept')= __('Концепция')
-					a(href='/blog')= __('Блог')
-					a(href='/buy')= __('Где купить?')
 				if (session && session.user_id)
 					.stargazer_block
 							a(href='/auth') stargazer
 							span= ' | '
 							a(href='/auth/logout') выход
+				.menu_block
+					a.coll(href='/#collections')= __('Коллекции')
+					a(href='/concept')= __('Концепция')
+					a(href='/blog')= __('Блог')
+					a(href='/buy')= __('Где купить?')
 			block over
 			.main_block
 				.content_block: .content_inner
