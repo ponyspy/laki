@@ -10,13 +10,13 @@ block header_include
 	- var include_js = ['concept.js']
 
 block content
-	.concept_title= intro
+	.concept_intro!= intro
 
 	.author_block
 		.author_meta
 			img.author_photo(src='/stuff/laki/backgrounds/iam.jpg')
 			.author_name= __('Елена Латаш')
-			.author_title!= quote
+			.author_quote!= quote
 		.author_description!= desc
 
 		+blog_cut(0)
