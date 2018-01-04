@@ -25,6 +25,7 @@ var userSchema = new Schema({
 var collectSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
 	quote: { type: String, trim: true, locale: true },
+	intro: { type: String, trim: true, locale: true },
 	s_title: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
 	recommends: { type: String, trim: true, locale: true },
@@ -75,6 +76,12 @@ var shopSchema = new Schema({
 
 
 directionSchema.index({'date': -1});
+collectSchema.index({'date': -1});
+shopSchema.index({'date': -1});
+
+directionSchema.index({'title.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
+collectSchema.index({'title.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
+shopSchema.index({'city.value': 'text', 'station.value': 'text', 'street.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
 
 
 // ------------------------

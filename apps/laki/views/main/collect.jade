@@ -3,27 +3,33 @@ extends layout
 
 block header_meta
 	- var content_title= 'xDance Sky' + ' | ' + __('Коллекция') + ' | ' + collect.i18n.title.get(locale)
-	- var content_description = collect.i18n.s_title.get(locale)
+	- var content_description = collect.i18n.intro.get(locale)
 	- var content_images = [collect.poster]
 
 block header_include
 	- var include_libs_css = ['swiper.min.css']
 	- var include_css = ['collect.css']
-	- var include_libs_js = ['swiper.jquery.min.js']
+	- var include_libs_js = ['swiper.min.js']
 	- var include_js = ['collect.js']
 
-block content
-	.collect_head
-		.collect_title Direction Title
-		.collect_quote Collection Quote
+block over
+	.over_block(style='background-image: url(' + collect.poster + ')')
+		.collect_head
+			.collect_title= collect.i18n.title.get(locale)
+			.collect_quote= collect.i18n.quote.get(locale)
 
+block content
 	.collect_body
-		.collect_s_title Collect S Title
-		.collect_description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		.collect_intro= collect.i18n.intro.get(locale)
+		.collect_description= collect.i18n.description.get(locale)
 
 	.collect_slider
-		each slide in new Array(6)
-			.slide_item
+		.swiper-container: .swiper-wrapper
+			each slide in collect.images
+				.slide_item.swiper-slide(style='background-image: url(' + slide.original + ')')
+		.swiper-pagination.swiper-pagination-black
+		.swiper-button-next.swiper-button-black
+		.swiper-button-prev.swiper-button-black
 
 	a.collect_buy(href='/buy')= __('Приобрести')
 
@@ -34,15 +40,17 @@ block content
 				.slide_item
 
 	.collect_recomends
-		.collect_recomends_title= __('Рекомендации по нанесению')
-		.collect_recomends_desc Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		.recomends_title= __('Рекомендации по нанесению')
+		.recomends_desc!= collect.i18n.recommends.get(locale)
 
 	+blog_cut()
 
 	.sim_collects
 		.sim_title= __('Другие коллекции')
 		.sim_items
-			each item in new Array(6)
-				.sim_item
-					.sim_title Sim Title
-					.sim_photo
+			each sim in sim_collects
+				a.sim_item(href='/collections/' + sim._short_id)
+					.sim_item_title: span= get_locale(sim.title, locale)
+					.sim_item_image
+						.image(style='background-image: url(' + sim.poster + ')')
+						.quote= get_locale(sim.quote, locale)

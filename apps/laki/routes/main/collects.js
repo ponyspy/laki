@@ -1,9 +1,11 @@
 var jade = require('jade');
 
-module.exports = function(Model) {
+module.exports = function(Model, Params) {
 	var module = {};
 
 	var Collect = Model.Collect;
+
+	var get_locale = Params.locale.get_locale;
 
 	module.index = function(req, res) {
 		res.redirect('/');
@@ -15,7 +17,11 @@ module.exports = function(Model) {
 		Collect.findOne({ '_short_id': short_id }).where('status').ne('hidden').exec(function(err, collect) {
 			if (err) return next(err);
 
-			res.render('main/collect.jade', { collect: collect });
+			Collect.aggregate({ $sample: { size: 3 } }).exec(function(err, sim_collects) {
+				if (err) return next(err);
+
+				res.render('main/collect.jade', { collect: collect, sim_collects: sim_collects, get_locale: get_locale });
+			});
 		});
 	};
 

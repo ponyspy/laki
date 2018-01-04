@@ -1,2 +1,89 @@
 @media screen and (max-width: 680px)
 	@import 'mobile/_collect.styl'
+
+.over_block
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100%
+	background-color black
+	background-size cover
+	background-position center
+	background-repeat no-repeat
+	position absolute
+	.collect_head
+		max-width 1200px
+		height 100%
+		padding-left 20px
+		padding-right 20px
+		margin 120px auto
+		position relative
+		color white
+		.collect_title
+			font 40pt/42pt 'RegalTextPro Med'
+		.collect_quote
+			margin-top 20px
+			margin-left 120px
+			font 16pt/18pt 'Gerbera'
+
+.main_block
+	position absolute
+	width 100%
+	top 100%
+
+.collect_body
+	max-width 800px
+	margin 0 auto
+	padding-top 40px
+	padding-bottom 40px
+	.collect_intro
+		margin-bottom 40px
+		font 32pt/34pt 'RegalTextPro Med'
+	.collect_description
+		font 16pt/18pt 'RegalTextPro RegBold'
+
+.collect_slider
+		user-select none
+		max-width 1000px
+		height 480px
+		margin 0 auto
+		position relative
+		.swiper-button-next
+			position absolute
+			top 50%
+			right 40px
+		.swiper-button-prev
+			position absolute
+			top 50%
+			left 40px
+		.swiper-pagination
+			margin 0 auto
+			position relative
+			.swiper-pagination-bullet
+				margin-top 20px
+				margin-right 8px
+				&:last-child
+					margin-right 0
+		.swiper-container
+				max-width 800px
+				height 480px
+			.slide_item
+				width 100%
+				height 100%
+				background-size cover
+				background-position center
+				background-repeat no-repeat
+
+
+.collect_recomends
+	max-width 800px
+	margin 0 auto
+	padding-top 40px
+	padding-bottom 80px
+	.recomends_title
+		font 24pt/26pt 'RegalTextPro Med'
+		text-align center
+		padding-bottom 40px
+	.recomends_desc
+		font 16pt/18pt 'RegalTextPro RegBold'

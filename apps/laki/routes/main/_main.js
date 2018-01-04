@@ -8,7 +8,7 @@ var Params = {
 
 var main = {
 	index: require('./index.js')(Model),
-	collects: require('./collects.js')(Model),
+	collects: require('./collects.js')(Model, Params),
 	directions: require('./directions.js')(Model, Params),
 	concept: require('./concept.js')(),
 	buy: require('./buy.js')(Model),
