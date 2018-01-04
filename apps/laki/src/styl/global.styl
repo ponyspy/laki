@@ -23,6 +23,7 @@ html, body
 	top 0
 	.title_inner
 		display flex
+		justify-content space-between
 	span, a
 		color white
 		text-decoration none
@@ -33,21 +34,25 @@ html, body
 		width 180px
 		// background-color rgb(185, 213, 237)
 	.lang_block
-		margin-top 40px
+		flex-grow 1
 		margin-left 60px
+		margin-right 40px
+		margin-top 40px
 		a
-			display block
 			font 18pt/16pt 'RegalFinessePro MedIt'
 	.stargazer_block
+		flex-grow 1
 		font 16pt/16pt 'Times'
-		margin-left 60px
 		margin-top 40px
+		margin-right 40px
 	.menu_block
-		margin-left auto
 		margin-top 40px
 		font 16pt/18pt 'Gerbera'
 		a
-			margin-left 40px
+			display inline-block
+			margin-right 40px
+			&:last-child
+				margin-right 0
 
 // .content_block
 // 	background-color lightgrey
