@@ -23,9 +23,10 @@
 		.collect_title
 			font 40pt/42pt 'RegalTextPro Med'
 		.collect_quote
+			max-width 600px
 			margin-top 20px
 			margin-left 120px
-			font 16pt/18pt 'Gerbera'
+			font 18pt/24pt 'Gerbera'
 
 .main_block
 	position absolute
@@ -35,13 +36,15 @@
 .collect_body
 	max-width 800px
 	margin 0 auto
-	padding-top 40px
+	padding-top 80px
 	padding-bottom 40px
 	.collect_intro
 		margin-bottom 40px
-		font 32pt/34pt 'RegalTextPro Med'
+		font 32pt/34pt 'RegalTextPro RegBold'
+		hyphens auto
 	.collect_description
-		font 16pt/18pt 'RegalTextPro RegBold'
+		hyphens auto
+		font 18pt/24pt 'RegalTextPro RegBold'
 
 .collect_slider
 		user-select none
@@ -75,15 +78,44 @@
 				background-position center
 				background-repeat no-repeat
 
+.collect_buy
+	margin-top 100px
+	text-align center
+	a
+		display inline-block
+		color black
+		padding-top 20px
+		padding-bottom 15px
+		padding-left 40px
+		padding-right 40px
+		border 4px solid black
+		text-decoration none
+		font 16pt/18pt 'Gerbera'
+		&:hover
+			background-color black
+			color white
+
+.collect_patterns
+	width 100%
+	height 400px
+	background-color black
+	margin-top 80px
+	.patterns_title
+		padding-top 40px
+		padding-bottom 40px
+		font 30pt/32pt 'RegalTextPro RegBold'
+		text-align center
+		color white
 
 .collect_recomends
 	max-width 800px
 	margin 0 auto
-	padding-top 40px
+	padding-top 80px
 	padding-bottom 80px
 	.recomends_title
-		font 24pt/26pt 'RegalTextPro Med'
+		font 30pt/32pt 'RegalTextPro RegBold'
 		text-align center
 		padding-bottom 40px
 	.recomends_desc
-		font 16pt/18pt 'RegalTextPro RegBold'
+		hyphens auto
+		font 18pt/24pt 'RegalTextPro RegBold'

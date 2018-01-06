@@ -20,8 +20,8 @@ block over
 
 block content
 	.collect_body
-		.collect_intro= collect.i18n.intro.get(locale)
-		.collect_description= collect.i18n.description.get(locale)
+		.collect_intro!= collect.i18n.intro.get(locale)
+		.collect_description!= collect.i18n.description.get(locale)
 
 	.collect_slider
 		.swiper-container: .swiper-wrapper
@@ -31,10 +31,10 @@ block content
 		.swiper-button-next.swiper-button-black
 		.swiper-button-prev.swiper-button-black
 
-	a.collect_buy(href='/buy')= __('Приобрести')
+	.collect_buy: a(href='/buy')= __('Приобрести')
 
 	.collect_patterns
-		.patterns_title= '96' + ' ' + __('оттенков')
+		.patterns_title= '96' + ' ' + __('оттенков в коллекции')
 		.patterns_slider
 			each slide in new Array(36)
 				.slide_item
