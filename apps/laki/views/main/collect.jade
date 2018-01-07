@@ -24,22 +24,22 @@ block content
 		.collect_description!= collect.i18n.description.get(locale)
 
 	.collect_slider
-		.swiper-container: .swiper-wrapper
-			each slide in collect.images
-				.slide_item.swiper-slide(style='background-image: url(' + slide.original + ')')
-		.swiper-pagination.swiper-pagination-black
-		.swiper-button-next.swiper-button-black
-		.swiper-button-prev.swiper-button-black
+		.swiper-container
+			.swiper-wrapper
+				each slide in collect.images
+					.slide_item.swiper-slide(style='background-image: url(' + slide.original + ')')
+			.swiper-pagination.swiper-pagination-white
+			.swiper-button-next.swiper-button-white
+			.swiper-button-prev.swiper-button-white
 
 	.collect_buy: a(href='/buy')= __('Приобрести')
 
 	.collect_patterns
-		.patterns_title= '96' + ' ' + __('оттенков в коллекции')
+		.patterns_title: span= '36' + ' ' + __('оттенков в коллекции')
 		.patterns_slider
 			.swiper-container: .swiper-wrapper
 				each slide, i in new Array(36)
-					.slide_item.swiper-slide
-						span= i
+					.slide_item.swiper-slide: span= (i+1)
 
 	.collect_recomends
 		.recomends_title= __('Рекомендации по нанесению')

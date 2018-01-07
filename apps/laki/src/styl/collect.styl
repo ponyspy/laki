@@ -48,8 +48,8 @@
 
 .collect_slider
 		user-select none
-		max-width 1000px
-		height 480px
+		width 100%
+		height 680px
 		margin 0 auto
 		position relative
 		.swiper-button-next
@@ -60,17 +60,9 @@
 			position absolute
 			top 50%
 			left 40px
-		.swiper-pagination
-			margin 0 auto
-			position relative
-			.swiper-pagination-bullet
-				margin-top 20px
-				margin-right 8px
-				&:last-child
-					margin-right 0
 		.swiper-container
-				max-width 800px
-				height 480px
+				width 100%
+				height 680px
 			.slide_item
 				width 100%
 				height 100%
@@ -79,7 +71,7 @@
 				background-repeat no-repeat
 
 .collect_buy
-	margin-top 100px
+	margin-top 80px
 	text-align center
 	a
 		display inline-block
@@ -104,12 +96,19 @@
 	height 340px
 	background-color black
 	margin-top 80px
+	user-select none
 	.patterns_title
 		padding-top 40px
 		padding-bottom 40px
 		font 30pt/32pt 'RegalTextPro RegBold'
 		text-align center
 		color white
+		span
+			user-select auto
+			cursor pointer
+			border-bottom 2px solid transparent
+			&:hover
+				border-bottom 2px solid white
 	.patterns_slider
 		color white
 		height 160px

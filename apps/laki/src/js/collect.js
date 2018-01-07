@@ -5,11 +5,11 @@ $(function() {
 	var swiper = new Swiper($slider[0], {
 		pagination: {
 			clickable: true,
-			el: $slider.parent().find('.swiper-pagination')[0],
+			el: $slider.find('.swiper-pagination')[0],
 		},
 		navigation: {
-			nextEl: $slider.parent().find('.swiper-button-next')[0],
-			prevEl: $slider.parent().find('.swiper-button-prev')[0],
+			nextEl: $slider.find('.swiper-button-next')[0],
+			prevEl: $slider.find('.swiper-button-prev')[0],
 		},
 	});
 
@@ -18,6 +18,10 @@ $(function() {
 		centeredSlides: true,
 		slideToClickedSlide: true,
 		spaceBetween: 30,
+	});
+
+	$('.patterns_title').children('span').on('click', function(e) {
+		swiper_two.slideTo(0);
 	});
 
 });
