@@ -31,6 +31,7 @@ module.exports = function(Model, Params) {
 		direction.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		direction.collects = post.collects;
 		direction.main_columns = post.main_columns;
+		direction.sym = post.sym ? post.sym : undefined;
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 

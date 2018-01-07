@@ -38,7 +38,7 @@ block content
 		.sim_title= __('Другие коллекции')
 		.sim_items
 			each sim in sim_collects
-				a.sim_item(href='/collections/' + sim._short_id)
+				a.sim_item(href='/collections/' + (sim.sym ? sim.sym : sim._short_id))
 					.sim_item_title: span= get_locale(sim.title, locale)
 					.sim_item_image
 						.image(style='background-image: url(' + sim.poster + ')')

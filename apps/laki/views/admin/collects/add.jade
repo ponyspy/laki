@@ -23,14 +23,14 @@ block content
 		form(action="", method="post", enctype="multipart/form-data")
 			.form_title Название:
 			+form_text_single('title')
+			.form_title Синоним:
+			input(type='text', name='sym')
 			.form_title Цитата:
 			+form_text_single('quote')
 			.form_title Вступление:
 			+form_text_single('intro')
 			.form_title Подзаголовок:
 			+form_text_single('s_title')
-			.form_title Синоним:
-			input(type='text', name='sym')
 			.form_title Описание:
 			+form_text_multi('description')
 			.form_title Рекомендации:

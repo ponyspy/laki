@@ -12,9 +12,9 @@ module.exports = function(Model, Params) {
 	};
 
 	module.collect = function(req, res, next) {
-		var short_id = req.params.short_id;
+		var id = req.params.short_id;
 
-		Collect.findOne({ '_short_id': short_id }).where('status').ne('hidden').exec(function(err, collect) {
+		Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').exec(function(err, collect) {
 			if (err) return next(err);
 
 			Collect.aggregate({ $sample: { size: 3 } }).exec(function(err, sim_collects) {
