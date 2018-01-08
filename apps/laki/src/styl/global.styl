@@ -135,29 +135,29 @@ html, body
 				padding-top 100%
 				box-sizing border-box
 				position relative
-				.quote
-					transition .2s linear
-					text-align center
-					width 80%
-					top 0
-					left 0
-					right 0
-					bottom 0
-					margin auto
+				.image_in
+					top 20px; left 20px; right 20px; bottom 20px
 					position absolute
-					display table
-					opacity 0
-					z-index 999
-					color white
-					font 22pt/24pt 'RegalTextPro Med'
-				.image
-					transition .2s linear
-					position absolute
-					top 20px
-					left 20px
-					right 20px
-					bottom 20px
 					margin auto
-					background-size cover
-					background-position center
-					background-repeat no-repeat
+					overflow hidden
+					.quote
+						transition .2s linear
+						text-align center
+						width 80%
+						top 0; left 0; right 0; bottom 0
+						margin auto
+						position absolute
+						display table
+						opacity 0
+						z-index 999
+						color white
+						font 22pt/24pt 'RegalTextPro Med'
+					.image
+						-webkit-backface-visibility: hidden;
+						-webkit-transform: translateZ(0) scale(1.0, 1.0);
+						transition .3s linear
+						position absolute
+						top -5px; left -5px; right -5px; bottom -5px
+						background-size cover
+						background-position center
+						background-repeat no-repeat
