@@ -30,7 +30,7 @@ block content
 	.directions_block#collections
 		each direction, i in directions
 			.direction_item
-				a.direction_title(href='/directions/' + (direction.sym ? direction.sym : direction._short_id)): span= direction.i18n.title.get(locale)
+				.direction_title: a(href='/directions/' + (direction.sym ? direction.sym : direction._short_id))= direction.i18n.title.get(locale)
 				.direction_collects(class='x' + direction.main_columns)
 					each collect in direction.collects
 						a.collect_item(href='/collections/' + (collect.sym ? collect.sym : collect._short_id))
