@@ -22,7 +22,7 @@ block content
 	.direction_collects
 		each collect in direction.collects
 			.collect_item
-				.collect_title= collect.i18n.title.get(locale)
+				.collect_title: a(href='/collections/' + (collect.sym ? collect.sym : collect._short_id))= collect.i18n.title.get(locale)
 				.collect_slider
 					.swiper-container: .swiper-wrapper
 						each slide in collect.images
