@@ -12,13 +12,13 @@ module.exports = function(Model) {
 			Direction.where('status').ne('hidden').exec(function(err, directions) {
 				var arr_directions = directions.map(function(direction) {
 					return {
-						url: '/directions/' + direction._short_id
+						url: '/directions/' + (direction.sym ? direction.sym : direction._short_id)
 					};
 				});
 
 				var arr_collects = collects.map(function(collect) {
 					return {
-						url: '/collections/' + collect._short_id
+						url: '/collections/' + (collect.sym ? collect.sym : collect._short_id)
 					};
 				});
 
