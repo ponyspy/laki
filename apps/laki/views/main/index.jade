@@ -37,7 +37,7 @@ block content
 							.collect_title: span= collect.i18n.title.get(locale)
 							.collect_image: .image_in
 								.image(style='background-image: url(' + collect.poster + ')')
-								.quote: span= collect.i18n.quote.get(locale)
+								.quote= collect.i18n.quote.get(locale)
 			if i == 0
 				+blog_cut()
 			if i == 1

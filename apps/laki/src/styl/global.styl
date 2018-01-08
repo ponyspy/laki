@@ -140,6 +140,15 @@ html, body
 					position absolute
 					margin auto
 					overflow hidden
+					.image
+						-webkit-backface-visibility: hidden;
+						-webkit-transform: translateZ(0) scale(1.0, 1.0);
+						transition .3s linear
+						position absolute
+						top -5px; left -5px; right -5px; bottom -5px
+						background-size cover
+						background-position center
+						background-repeat no-repeat
 					.quote
 						transition .2s linear
 						text-align center
@@ -152,12 +161,3 @@ html, body
 						z-index 999
 						color white
 						font 22pt/24pt 'RegalTextPro Med'
-					.image
-						-webkit-backface-visibility: hidden;
-						-webkit-transform: translateZ(0) scale(1.0, 1.0);
-						transition .3s linear
-						position absolute
-						top -5px; left -5px; right -5px; bottom -5px
-						background-size cover
-						background-position center
-						background-repeat no-repeat
