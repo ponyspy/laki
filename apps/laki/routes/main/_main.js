@@ -10,6 +10,7 @@ var main = {
 	index: require('./index.js')(Model),
 	collects: require('./collects.js')(Model, Params),
 	directions: require('./directions.js')(Model, Params),
+	blog: require('./blog.js')(Model),
 	concept: require('./concept.js')(),
 	buy: require('./buy.js')(Model),
 	options: require('./options.js')(Model)
@@ -32,6 +33,12 @@ module.exports = (function() {
 
 	router.route('/directions/:short_id')
 		.get(main.directions.direction);
+
+	router.route('/blog')
+		.get(main.blog.index);
+
+	router.route('/blog/:short_id')
+		.get(main.blog.post);
 
 	router.route('/buy')
 		.get(main.buy.index);

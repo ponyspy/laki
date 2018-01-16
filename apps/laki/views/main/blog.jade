@@ -1,0 +1,19 @@
+extends layout
+
+block header_meta
+	- var content_title= 'xDance Sky' + ' | ' + __('Блог')
+	- var content_description = ''
+
+block header_include
+	//- - var include_libs_css = ['swiper.min.css']
+	- var include_css = ['blog.css']
+	//- - var include_libs_js = ['swiper.min.js']
+	//- - var include_js = ['blog.js']
+
+block content
+	.posts_block
+		each post in posts
+			a.post_item(href='/blog/' + (post.sym ? post.sym : post._short_id))
+				.post_poster
+				h1.post_title= post.i18n.title.get(locale)
+				.post_desctiption!= post.i18n.description.get(locale)
