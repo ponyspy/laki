@@ -178,6 +178,7 @@ $(function() {
 		.on('click', '.item_rm.user', {path:'/admin/users/remove', description: 'Удалить пользователя?'}, remove)
 		.on('click', '.item_rm.direction', {path:'/admin/directions/remove', description: 'Удалить напрвление?'}, remove)
 		.on('click', '.item_rm.collect', {path:'/admin/collects/remove', description: 'Удалить коллекцию?'}, remove)
-		.on('click', '.item_rm.shop', {path:'/admin/shops/remove', description: 'Удалить магазин?'}, remove);
+		.on('click', '.item_rm.shop', {path:'/admin/shops/remove', description: 'Удалить магазин?'}, remove)
+		.on('click', '.item_rm.post', {path:'/admin/posts/remove', description: 'Удалить пост?'}, remove);
 
 });

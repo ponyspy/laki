@@ -8,6 +8,7 @@ var admin = {
 	collects: require('./collects/_collects.js'),
 	shops: require('./shops/_shops.js'),
 	directions: require('./directions/_directions.js'),
+	posts: require('./posts/_posts.js'),
 	users: require('./users/_users.js'),
 	concept: require('./concept.js'),
 	options: require('./options.js')
@@ -31,6 +32,7 @@ module.exports = (function() {
 	router.use('/collects', checkAuth, upload.fields([ { name: 'attach' }, { name: 'poster' }, { name: 'poster_hover' } ]), admin.collects);
 	router.use('/shops', checkAuth, admin.shops);
 	router.use('/directions', checkAuth, upload.fields([ { name: 'poster' } ]), admin.directions);
+	router.use('/posts', checkAuth, upload.fields([ { name: 'poster' } ]), admin.posts);
 	router.use('/users', checkAuth, admin.users);
 
 	router.post('/preview', checkAuth, upload.single('image'), admin.options.preview);

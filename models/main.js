@@ -71,6 +71,17 @@ var shopSchema = new Schema({
 });
 
 
+var postSchema = new Schema({
+	title: { type: String, trim: true, locale: true },
+	description: { type: String, trim: true, locale: true },
+	poster: { type: String },
+	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
+	status: String,
+	_short_id: { type: String, unique: true, index: true, sparse: true },
+	date: { type: Date, default: Date.now },
+});
+
+
 // ------------------------
 // *** Index Block ***
 // ------------------------
@@ -79,10 +90,12 @@ var shopSchema = new Schema({
 directionSchema.index({'date': -1});
 collectSchema.index({'date': -1});
 shopSchema.index({'date': -1});
+shopSchema.index({'date': -1});
 
 directionSchema.index({'title.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
 collectSchema.index({'title.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
 shopSchema.index({'city.value': 'text', 'station.value': 'text', 'street.value': 'text'}, {language_override: 'lg', default_language: 'ru'});
+postSchema.index({'title.value': 'text', 'description.vaue': 'text'}, {language_override: 'lg', default_language: 'ru'});
 
 
 // ------------------------
@@ -95,6 +108,7 @@ userSchema.plugin(mongooseBcrypt, { fields: ['password'] });
 collectSchema.plugin(mongooseLocale);
 directionSchema.plugin(mongooseLocale);
 shopSchema.plugin(mongooseLocale);
+postSchema.plugin(mongooseLocale);
 
 
 // ------------------------
@@ -106,3 +120,4 @@ module.exports.User = mongoose.model('User', userSchema);
 module.exports.Collect = mongoose.model('Collect', collectSchema);
 module.exports.Direction = mongoose.model('Direction', directionSchema);
 module.exports.Shop = mongoose.model('Shop', shopSchema);
+module.exports.Post = mongoose.model('Post', postSchema);
