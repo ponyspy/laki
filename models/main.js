@@ -73,6 +73,7 @@ var shopSchema = new Schema({
 
 var postSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
+	intro: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
 	poster: { type: String },
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },

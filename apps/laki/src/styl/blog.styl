@@ -8,7 +8,20 @@
 		text-decoration none
 		color black
 		margin-top 80px
-		.post_title
-			margin-bottom 20px
-		&:hover
-			background-color lightgrey
+		padding-bottom 80px
+		border-bottom 2px solid black
+		&:last-child
+			border none
+			padding-bottom 0
+		.post_inner
+			margin 0 auto
+			max-width 740px
+			.post_title
+				text-align center
+				margin-bottom 40px
+				font 28pt/30pt 'RegalTextPro Med'
+				border-bottom 2px solid transparent
+			.post_intro
+				font 18pt/22pt 'RegalTextPro RegBold'
+		&:hover .post_title span
+			border-bottom 2px solid black

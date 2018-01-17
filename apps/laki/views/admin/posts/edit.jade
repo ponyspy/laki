@@ -25,6 +25,8 @@ block content
 			+form_text_single('title', post)
 			.form_title Синоним:
 			input(type='text', name='sym', value=post.sym, placeholder=post._short_id)
+			.form_title Вступление:
+			+form_text_multi('intro', post)
 			.form_title Описание:
 			+form_text_multi('description', post)
 			.form_title Обложка:
