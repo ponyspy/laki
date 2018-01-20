@@ -128,8 +128,8 @@ module.exports.images = function(obj, base_path, hold, upload_images, callback) 
 									obj_img.gallery = image.gallery;
 									obj_img.main = image.main;
 
-									// obj.images.push(obj_img); // mongo 3.4 or Schema option {usePushEach: true}
-									obj.images = obj.images.concat([obj_img]);  // mongo 3.6
+									obj.images.push(obj_img); // mongo 3.4 or Schema option {usePushEach: true}
+									// obj.images = obj.images.concat([obj_img]);  // mongo 3.6
 
 									callback();
 								});

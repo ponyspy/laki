@@ -12,8 +12,8 @@ block header_include
 
 block over
 	.over_block: .buy_head
-		.buy_phone= __('Контактный телефон для оптовиков:') + ' ' + '+7 903 741-06-33'
-		a.buy_blank(href='#')= __('Бланк заказа')
+		.buy_phone= __('Контактный телефон для оптовиков:') + ' ' + phone
+		a.buy_blank(href='/cdn/order.pdf')= __('Бланк заказа')
 
 block content
 	.buy_shops

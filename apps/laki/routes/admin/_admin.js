@@ -11,6 +11,7 @@ var admin = {
 	posts: require('./posts/_posts.js'),
 	users: require('./users/_users.js'),
 	concept: require('./concept.js'),
+	content: require('./content.js'),
 	options: require('./options.js')
 };
 
@@ -28,6 +29,10 @@ module.exports = (function() {
 	router.route('/concept')
 		.get(checkAuth, admin.concept.edit)
 		.post(checkAuth, admin.concept.edit_form);
+
+	router.route('/content')
+		.get(checkAuth, admin.content.edit)
+		.post(checkAuth, upload.single('order'), admin.content.edit_form);
 
 	router.use('/collects', checkAuth, upload.fields([ { name: 'attach' }, { name: 'poster' }, { name: 'poster_hover' } ]), admin.collects);
 	router.use('/shops', checkAuth, admin.shops);
