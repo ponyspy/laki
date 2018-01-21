@@ -18,7 +18,7 @@ module.exports = function(Model, Params) {
 		Direction.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').populate('collects').exec(function(err, direction) {
 			if (err) return next(err);
 
-			Collect.aggregate({ $sample: { size: 3 } }).exec(function(err, sim_collects) {
+			Collect.aggregate([{ $sample: { size: 3 } }]).exec(function(err, sim_collects) {
 				if (err) return next(err);
 
 				res.render('main/direction.jade', { direction: direction, get_locale: get_locale, sim_collects: sim_collects });
