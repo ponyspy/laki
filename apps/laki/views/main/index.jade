@@ -35,6 +35,7 @@ block content
 					each collect in direction.collects
 						a.collect_item(href='/collections/' + (collect.sym ? collect.sym : collect._short_id))
 							.collect_title: span= collect.i18n.title.get(locale)
+							.collect_quote= collect.i18n.quote.get(locale)
 							.collect_image: .image_in
 								.image(style='background-image: url(' + collect.poster + ')')
 								.quote= collect.i18n.quote.get(locale)

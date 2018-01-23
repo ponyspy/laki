@@ -1,4 +1,4 @@
-@media screen and (max-width: 680px)
+@media screen and (max-width: 840px)
 	@import 'mobile/_main.styl'
 
 .cut
@@ -89,6 +89,9 @@
 					width 100%
 					padding-top 100%
 					box-sizing border-box
+					.quote
+						font-size 18pt!important
+						line-height 24pt!important
 				.collect_title
 					font 32pt/32pt 'RegalTextPro Med'
 			.collect_item
@@ -104,6 +107,14 @@
 						opacity 1!important
 						transition .2s linear
 				// background-color rgb(101, 102, 107)
+				.collect_quote
+					display none
+					text-align center
+					font 18pt/24pt 'RegalTextPro Med'
+					margin-top 10px
+					padding-left 20px
+					padding-right 20px
+					hyphens auto
 				.collect_title
 					text-align center
 					font 42pt/42pt 'RegalTextPro Med'
@@ -144,4 +155,4 @@
 							opacity 0
 							z-index 999
 							color white
-							font 18pt/24pt 'RegalTextPro Med'
+							font 24pt/28pt 'RegalTextPro Med'

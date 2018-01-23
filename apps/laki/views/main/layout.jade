@@ -21,6 +21,9 @@ html
 					a(href='/concept')= __('Концепция')
 					a(href='/blog')= __('Блог')
 					a(href='/buy')= __('Где купить?')
+				.menu_drop
+					each span in new Array(4)
+						span
 			block over
 			.main_block
 				.content_block: .content_inner
