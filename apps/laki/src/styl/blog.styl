@@ -4,7 +4,7 @@
 .collects_block
 	margin-top 80px
 	.collects_title
-		font 14pt/18pt 'RegalTextPro RegBold'
+		font 16pt/20pt 'RegalTextPro RegBold'
 		margin-bottom 20px
 	.collects_items
 		overflow hidden
@@ -12,8 +12,10 @@
 			cursor pointer
 			display inline-block
 			font 20pt/24pt 'RegalTextPro RegBold'
-			span
+			&:hover span
 				border-bottom 2px solid rgb(237, 70, 47)
+			span
+				border-bottom 2px solid transparent
 			&:after
 				color rgb(237, 70, 47)
 				content '●'
@@ -47,4 +49,4 @@
 			.post_intro
 				font 18pt/22pt 'RegalTextPro RegBold'
 		&:hover .post_title span
-			border-bottom 2px solid black
+			border-bottom 2px solid rgb(237, 70, 47)
