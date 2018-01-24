@@ -1,6 +1,29 @@
 .title_block
 	position relative
 
+.collects_block
+	margin-top 80px
+	.collects_title
+		font 14pt/18pt 'RegalTextPro RegBold'
+		margin-bottom 20px
+	.collects_items
+		overflow hidden
+		.collect_item
+			cursor pointer
+			display inline-block
+			font 20pt/24pt 'RegalTextPro RegBold'
+			span
+				border-bottom 2px solid rgb(237, 70, 47)
+			&:after
+				color rgb(237, 70, 47)
+				content '●'
+				display inline-block
+				margin-left 10px
+				margin-right 5px
+				border none
+			&:last-child:after
+				content ''
+
 .posts_block
 	margin-bottom 80px
 	.post_item

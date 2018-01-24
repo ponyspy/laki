@@ -11,6 +11,11 @@ block header_include
 	//- - var include_js = ['blog.js']
 
 block content
+	.collects_block
+		.collects_title О коллекциях:
+		.collects_items
+			each collect in collects
+				.collect_item: span= collect.i18n.title.get(locale)
 	.posts_block
 		each post in posts
 			a.post_item(href='/blog/' + (post.sym ? post.sym : post._short_id))
