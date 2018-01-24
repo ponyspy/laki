@@ -31,6 +31,8 @@ block content
 			+form_text_multi('description', post)
 			.form_title Обложка:
 			+form_single_file('poster', post)(accept='image/jpeg,image/png,image/gif')
+			.form_title Коллекции:
+			+form_multiple_select('collects', collects, post.collects)
 			.form_title Статус:
 			select(name='status')
 				option(value='base') Обычный

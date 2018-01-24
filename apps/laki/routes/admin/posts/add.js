@@ -5,13 +5,18 @@ module.exports = function(Model, Params) {
 	var module = {};
 
 	var Post = Model.Post;
+	var Collect = Model.Collect;
 
 	var checkNested = Params.locale.checkNested;
 	var uploadImage = Params.upload.image;
 
 
 	module.index = function(req, res, next) {
-		res.render('admin/posts/add.jade');
+		Collect.find().sort('-date').exec(function(err, collects) {
+				if (err) return next(err);
+
+				res.render('admin/posts/add.jade', {collects: collects});
+			});
 	};
 
 
@@ -25,6 +30,7 @@ module.exports = function(Model, Params) {
 		post_item.status = post.status;
 		post_item.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 		post_item.sym = post.sym ? post.sym : undefined;
+		post_item.collects = post.collects;
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 
