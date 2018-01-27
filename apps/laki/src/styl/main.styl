@@ -98,8 +98,17 @@
 				margin-bottom 60px
 				color black
 				text-decoration none
+				&.hover:hover
+					.quote
+						opacity 0!important
+					.image.hover
+						transition .3s linear
+						opacity 1!important
+					.image.main
+						transition .3s linear
+						opacity 0!important
 				&:hover
-					.image
+					.image.main
 						filter: blur(5px)
 						transition .3s linear
 					.quote
@@ -144,6 +153,8 @@
 							background-size cover
 							background-position center
 							background-repeat no-repeat
+							&.hover
+								opacity 0
 						.quote
 							transition .2s linear
 							text-align center

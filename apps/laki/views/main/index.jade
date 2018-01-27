@@ -33,11 +33,12 @@ block content
 				.direction_title: a(href='/directions/' + (direction.sym ? direction.sym : direction._short_id))= direction.i18n.title.get(locale)
 				.direction_collects(class='x' + direction.main_columns)
 					each collect in direction.collects
-						a.collect_item(href='/collections/' + (collect.sym ? collect.sym : collect._short_id))
+						a.collect_item(class=collect.poster_hover ? 'hover': '', href='/collections/' + (collect.sym ? collect.sym : collect._short_id))
 							.collect_title: span= collect.i18n.title.get(locale)
 							.collect_quote= collect.i18n.quote.get(locale)
 							.collect_image: .image_in
-								.image(style='background-image: url(' + collect.poster + ')')
+								.image.main(style='background-image: url(' + collect.poster + ')')
+								.image.hover(style='background-image: url(' + collect.poster_hover + ')')
 								.quote= collect.i18n.quote.get(locale)
 							.collect_signature= collect.i18n.signature.get(locale)
 
