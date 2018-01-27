@@ -1,9 +1,20 @@
 var fs = require('fs');
 var mime = require('mime');
+var async = require('async');
 
 exports.edit = function(req, res) {
-	fs.readFile(__app_root + '/static/phone.html', function(err, phone) {
-		res.render('admin/content.jade', { phone: phone });
+	async.series({
+		phone: function(callback) {
+			fs.readFile(__app_root + '/static/phone.html', callback);
+		},
+		blog_title_ru: function(callback) {
+			fs.readFile(__app_root + '/static/blog_title_ru.html', callback);
+		},
+		blog_title_en: function(callback) {
+			fs.readFile(__app_root + '/static/blog_title_en.html', callback);
+		}
+	}, function(err, results) {
+		res.render('admin/content.jade', { content: results });
 	});
 };
 
@@ -11,11 +22,22 @@ exports.edit_form = function(req, res) {
 	var post = req.body;
 	var file = req.file;
 
-	fs.writeFile(__app_root + '/static/phone.html', post.phone, function(err) {
-		if (!file) return res.redirect('back');
+	async.series({
+		phone: function(callback) {
+			fs.writeFile(__app_root + '/static/phone.html', post.phone, callback);
+		},
+		blog_title_ru: function(callback) {
+			fs.writeFile(__app_root + '/static/blog_title_ru.html', post.blog_title.ru, callback);
+		},
+		blog_title_en: function(callback) {
+			fs.writeFile(__app_root + '/static/blog_title_en.html', post.blog_title.en, callback);
+		},
+		pdf: function(callback) {
+			if (!file) return callback(null);
 
-		fs.rename(file.path, __glob_root + '/public/cdn/order.' + mime.getExtension(file.mimetype), function(err) {
-			res.redirect('back');
-		});
+			fs.rename(file.path, __glob_root + '/public/cdn/order.' + mime.getExtension(file.mimetype), callback);
+		}
+	}, function(err, results) {
+		res.redirect('back');
 	});
 };

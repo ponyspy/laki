@@ -10,7 +10,7 @@ block header_include
 
 block content
 	.collects_block
-		.blog_title Статьи про лаковые покрытия, про процедуры по уходу за ногтями, про секреты маникюра от ведущих экспертов профессии: производителей лаков и мастеров маникюра.
+		.blog_title!= title
 		.collects_title О коллекциях:
 		.collects_items
 			each collect in collects

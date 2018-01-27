@@ -15,7 +15,7 @@ block header_include
 block over
 	.over_block(style='background-image: url(' + direction.poster + ')')
 		.direction_head
-			.direction_title= direction.i18n.title.get(locale)
+			h1.direction_title= direction.i18n.title.get(locale)
 
 block content
 	.direction_description!= direction.i18n.description.get(locale)

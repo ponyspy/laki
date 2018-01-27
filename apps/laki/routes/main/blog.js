@@ -1,4 +1,5 @@
 var jade = require('jade');
+var fs = require('fs');
 
 module.exports = function(Model) {
 	var module = {};
@@ -13,7 +14,9 @@ module.exports = function(Model) {
 			Collect.find().where('status').ne('hidden').exec(function(err, collects) {
 				if (err) return next(err);
 
-				res.render('main/blog.jade', { posts: posts, collects: collects });
+				fs.readFile(__app_root + '/static/blog_title_' + req.locale + '.html', function(err, title) {
+					res.render('main/blog.jade', { posts: posts, collects: collects, title: title });
+				});
 			});
 		});
 	};
