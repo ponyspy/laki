@@ -16,13 +16,13 @@ block over
 	.over_block(style='background-image: url(' + direction.poster + ')')
 		.direction_head
 			.direction_title= direction.i18n.title.get(locale)
-			.direction_description!= direction.i18n.description.get(locale)
 
 block content
+	.direction_description!= direction.i18n.description.get(locale)
 	.direction_collects
 		each collect in direction.collects
 			.collect_item
-				.collect_title: a(href='/collections/' + (collect.sym ? collect.sym : collect._short_id))= collect.i18n.title.get(locale)
+				.collect_title= collect.i18n.title.get(locale)
 				.collect_slider
 					.swiper-container: .swiper-wrapper
 						each slide in collect.images

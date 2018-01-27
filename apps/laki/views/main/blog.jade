@@ -5,13 +5,12 @@ block header_meta
 	- var content_description = ''
 
 block header_include
-	//- - var include_libs_css = ['swiper.min.css']
 	- var include_css = ['blog.css']
-	//- - var include_libs_js = ['swiper.min.js']
 	//- - var include_js = ['blog.js']
 
 block content
 	.collects_block
+		.blog_title Статьи про лаковые покрытия, про процедуры по уходу за ногтями, про секреты маникюра от ведущих экспертов профессии: производителей лаков и мастеров маникюра.
 		.collects_title О коллекциях:
 		.collects_items
 			each collect in collects
