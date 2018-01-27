@@ -25,6 +25,7 @@ var userSchema = new Schema({
 var collectSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
 	quote: { type: String, trim: true, locale: true },
+	signature: { type: String, trim: true, locale: true },
 	intro: { type: String, trim: true, locale: true },
 	s_title: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
