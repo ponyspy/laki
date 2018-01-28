@@ -1,3 +1,16 @@
+mixin sim_collects(sim_items)
+	.sim_collects
+		.sim_title= __('Другие коллекции')
+		.sim_items
+			each sim in sim_items
+				a.sim_item(class=sim.poster_hover ? 'hover': '', href='/collections/' + (sim.sym ? sim.sym : sim._short_id))
+					.sim_item_title: span= get_locale(sim.title, locale)
+					.sim_item_image: .image_in
+						.image.main(style='background-image: url(' + sim.poster + ')')
+						if sim.poster_hover
+							.image.hover(style='background-image: url(' + sim.poster_hover + ')')
+						.quote= get_locale(sim.quote, locale)
+
 mixin instagram_cut()
 	.cut.instagram
 		img.instagram_logo(src='/stuff/laki/icons/social/instagram.png')

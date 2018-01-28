@@ -17,10 +17,10 @@ module.exports = function(Model, Params) {
 		Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').exec(function(err, collect) {
 			if (err) return next(err);
 
-			Collect.aggregate([{ $sample: { size: 3 } }]).exec(function(err, sim_collects) {
+			Collect.aggregate([{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
 				if (err) return next(err);
 
-				res.render('main/collect.jade', { collect: collect, sim_collects: sim_collects, get_locale: get_locale });
+				res.render('main/collect.jade', { collect: collect, sim_items: sim_items, get_locale: get_locale });
 			});
 		});
 	};
