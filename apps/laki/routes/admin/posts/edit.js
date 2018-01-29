@@ -37,7 +37,7 @@ module.exports = function(Model, Params) {
 			post_item.status = post.status;
 			post_item.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 			post_item.sym = post.sym ? post.sym : undefined;
-			post_item.collects = post.collects;
+			post_item.collects = post.collects.filter(function(collect) { return collect != 'none'; });
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];
 
