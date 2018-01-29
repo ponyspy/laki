@@ -34,6 +34,7 @@ $(function() {
 		context.collect = window.location.hash.replace('#', '');
 
 		$('.posts_loader').removeClass('hide');
+		$('#' + context.collect).addClass('current');
 
 		$.ajax({url: '/blog', method: 'POST', data: { context: context }, async: false }).done(function(data) {
 			if (data !== 'end') {
@@ -43,6 +44,8 @@ $(function() {
 
 				context.skip = $data.length;
 				$window.off('scroll').scrollTop(0).on('scroll', scrollLoader);
+			} else {
+				$('.posts_block').empty();
 			}
 		});
 	});
