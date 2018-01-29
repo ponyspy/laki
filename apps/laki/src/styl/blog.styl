@@ -19,8 +19,10 @@
 			cursor pointer
 			display inline-block
 			font 20pt/24pt 'RegalTextPro RegBold'
-			&:hover span
-				border-bottom 2px solid rgb(237, 70, 47)
+			&.current
+			&:hover
+				span
+					border-bottom 2px solid rgb(237, 70, 47)
 			span
 				border-bottom 2px solid transparent
 			&:after
@@ -32,6 +34,18 @@
 				border none
 			&:last-child:after
 				content ''
+
+.posts_loader
+	margin-top 40px
+	margin-bottom 40px
+	text-align center
+	font 14pt/16pt 'RegalTextPro Med'
+	cursor pointer
+	&:hover
+		span
+			border-bottom 1px solid black
+	span
+		border-bottom 1px solid transparent
 
 .posts_block
 	margin-bottom 80px

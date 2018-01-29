@@ -1,0 +1,6 @@
+each post in posts
+	a.post_item(href='/blog/' + (post.sym ? post.sym : post._short_id))
+		.post_inner
+			.post_poster
+			h1.post_title: span= post.i18n.title.get(locale)
+			.post_intro!= post.i18n.intro.get(locale)

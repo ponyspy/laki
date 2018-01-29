@@ -35,7 +35,8 @@ module.exports = (function() {
 		.get(main.directions.direction);
 
 	router.route('/blog')
-		.get(main.blog.index);
+		.get(main.blog.index)
+		.post(main.blog.get_posts);
 
 	router.route('/blog/:short_id')
 		.get(main.blog.post);
