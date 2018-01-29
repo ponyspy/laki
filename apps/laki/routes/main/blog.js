@@ -8,11 +8,15 @@ module.exports = function(Model) {
 	var Collect = Model.Collect;
 
 	module.index = function(req, res, next) {
-		Collect.find().where('status').ne('hidden').exec(function(err, collects) {
+		Post.distinct('collects').exec(function(err, collects) {
 			if (err) return next(err);
 
-			fs.readFile(__app_root + '/static/blog_title_' + req.locale + '.html', function(err, title) {
-				res.render('main/blog.jade', { collects: collects, title: title });
+			Collect.find({ '_id': { $in: collects } }).where('status').ne('hidden').exec(function(err, collects) {
+				if (err) return next(err);
+
+				fs.readFile(__app_root + '/static/blog_title_' + req.locale + '.html', function(err, title) {
+					res.render('main/blog.jade', { collects: collects, title: title });
+				});
 			});
 		});
 	};
