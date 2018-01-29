@@ -11,6 +11,30 @@
 .menu_drop
 	display block!important
 
+.menu_block
+	flex-direction column
+	text-align center
+	font-size 22pt!important
+	line-height 24pt!important
+	top 40px
+	left 0
+	width 100%
+	position absolute
+	z-index 99999
+	a
+		margin 0!important
+		margin-top 40px!important
+
+.menu_open
+	overflow hidden!important
+	.title_inner
+		height 100%!important
+	.title_block
+		height 100%!important
+		background-color rgba(0, 0, 0, 0.8)
+	.menu_block
+		display flex!important
+
 .logo img
 	width 100px!important
 	padding-top 5px!important
@@ -25,10 +49,6 @@
 	line-height 24pt!important
 	&.instagram img
 		width 60px!important
-
-// .footer_block .copy_block
-// 	font-size 12pt!important
-// 	line-height 14pt!important
 
 .sim_title
 	font-size 14pt!important
