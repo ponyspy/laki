@@ -45,7 +45,7 @@ module.exports = function(Model) {
 						compileDebug: false, debug: false, cache: true, pretty: false
 					};
 
-					res.send(jade.renderFile(__app_root + '/views/admin/posts/_post_items.jade', opts));
+					res.send(jade.renderFile(__app_root + '/views/admin/posts/_posts.jade', opts));
 				} else {
 					res.send('end');
 				}
