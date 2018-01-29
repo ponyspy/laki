@@ -20,7 +20,7 @@ module.exports = function(Model) {
 	module.get_posts = function(req, res) {
 		var post = req.body;
 
-		Collect.findOne({ status: { $ne: 'hidden' }, _id: post.context.collect }).exec(function(err, collect) {
+		Collect.findOne({ status: { $ne: 'hidden' }, _short_id: post.context.collect }).exec(function(err, collect) {
 
 			var Query = collect
 				? Post.find({ 'collects': collect._id })
