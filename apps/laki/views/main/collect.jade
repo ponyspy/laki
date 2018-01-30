@@ -35,11 +35,11 @@ block content
 	.collect_buy: a(href='/buy')= __('Приобрести')
 
 	.collect_patterns
-		.patterns_title: span= '36' + ' ' + __('оттенков в коллекции')
+		.patterns_title: span= collect.patterns.length + ' ' + __('оттенков в коллекции')
 		.patterns_slider
 			.swiper-container: .swiper-wrapper
-				each slide, i in new Array(36)
-					.slide_item.swiper-slide: span= (i+1)
+				each pattern, i in collect.patterns
+					.slide_item.swiper-slide(style='background-image: url(' + pattern.path + ')'): span= (i+1)
 
 	.collect_recomends
 		.recomends_title= __('Рекомендации по нанесению')
