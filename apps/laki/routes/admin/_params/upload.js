@@ -161,8 +161,8 @@ module.exports.preview = function(images, callback) {
 };
 
 module.exports.images_upload = function(obj, base_path, field_name, post, files, callback) {
-	if (files.textures && files.textures.length > 0) {
-		async.forEachOfSeries(files.textures, function(file, i, callback) {
+	if (files.patterns && files.patterns.length > 0) {
+		async.forEachOfSeries(files.patterns, function(file, i, callback) {
 			var file_path = '/cdn/' + base_path + '/' + obj._id + '/' + field_name;
 			var file_name = Date.now() + '.' + mime.getExtension(file.mimetype);
 

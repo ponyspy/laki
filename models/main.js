@@ -40,7 +40,7 @@ var collectSchema = new Schema({
 		thumb: { type: String },
 		preview: { type: String }
 	}],
-	textures: [{
+	patterns: [{
 		path: { type: String },
 	}],
 	_short_id: { type: String, unique: true, index: true, sparse: true },

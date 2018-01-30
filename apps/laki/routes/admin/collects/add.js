@@ -61,7 +61,7 @@ module.exports = function(Model, Params) {
 			async.apply(uploadImages, collect, 'collects', null, post.images),
 			async.apply(uploadImage, collect, 'collects', 'poster', 1920, files.poster && files.poster[0], null),
 			async.apply(uploadImage, collect, 'collects', 'poster_hover', 1920, files.poster_hover && files.poster_hover[0], null),
-			async.apply(imagesUpload, collect, 'collects', 'textures', post, files),
+			async.apply(imagesUpload, collect, 'collects', 'patterns', post, files),
 		], function(err, results) {
 			if (err) return next(err);
 
