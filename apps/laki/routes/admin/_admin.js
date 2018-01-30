@@ -34,7 +34,7 @@ module.exports = (function() {
 		.get(checkAuth, admin.content.edit)
 		.post(checkAuth, upload.single('order'), admin.content.edit_form);
 
-	router.use('/collects', checkAuth, upload.fields([ { name: 'attach' }, { name: 'poster' }, { name: 'poster_hover' } ]), admin.collects);
+	router.use('/collects', checkAuth, upload.fields([ { name: 'textures' }, { name: 'poster' }, { name: 'poster_hover' } ]), admin.collects);
 	router.use('/shops', checkAuth, admin.shops);
 	router.use('/directions', checkAuth, upload.fields([ { name: 'poster' } ]), admin.directions);
 	router.use('/posts', checkAuth, upload.fields([ { name: 'poster' } ]), admin.posts);

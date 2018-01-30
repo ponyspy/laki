@@ -40,9 +40,8 @@ var collectSchema = new Schema({
 		thumb: { type: String },
 		preview: { type: String }
 	}],
-	files: [{
+	textures: [{
 		path: { type: String },
-		description: { type: String, trim: true, locale: true }
 	}],
 	_short_id: { type: String, unique: true, index: true, sparse: true },
 	date: { type: Date, default: Date.now },

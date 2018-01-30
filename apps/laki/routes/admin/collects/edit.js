@@ -9,7 +9,7 @@ module.exports = function(Model, Params) {
 	var previewImages = Params.upload.preview;
 	var uploadImages = Params.upload.images;
 	var uploadImage = Params.upload.image;
-	var filesUpload = Params.upload.files_upload;
+	var imagesUpload = Params.upload.images_upload;
 	var filesDelete = Params.upload.files_delete;
 	var checkNested = Params.locale.checkNested;
 
@@ -73,8 +73,8 @@ module.exports = function(Model, Params) {
 				async.apply(uploadImages, collect, 'collects', post.hold, post.images),
 				async.apply(uploadImage, collect, 'collects', 'poster', 1920, files.poster && files.poster[0], post.poster_del),
 				async.apply(uploadImage, collect, 'collects', 'poster_hover', 1920, files.poster_hover && files.poster_hover[0], post.poster_hover_del),
-				async.apply(filesDelete, collect, 'files', post, files),
-				async.apply(filesUpload, collect, 'collects', 'files', post, files),
+				async.apply(filesDelete, collect, 'textures', post, files),
+				async.apply(imagesUpload, collect, 'collects', 'textures', post, files),
 			], function(err, results) {
 				if (err) return next(err);
 

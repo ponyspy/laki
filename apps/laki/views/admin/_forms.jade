@@ -120,6 +120,26 @@ mixin form_multiple_files(path, object)
 		input(type="button", value='+').forward
 		br
 
+//- Multiple Images Form
+
+mixin form_multiple_images(path, object)
+	if (object && object[path].length > 0)
+		each image, i in object[path]
+			label
+				span= 'удалить | '
+				input(type='checkbox', name='files_delete[]', value=image.path)
+			span &nbsp;
+			a(href=image.path, target='_blank')= 'Изображение ' + (i+1)
+			br
+		br
+	.snake_outer
+		.snake
+			input(type="button", value='-').back
+			input(type='file', name=path, accept=attributes.accept)
+		//- br
+		input(type="button", value='+').forward
+		br
+
 //- Images Upload Form
 
 mixin form_images_upload(images)

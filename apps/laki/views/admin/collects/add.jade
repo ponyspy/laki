@@ -44,7 +44,7 @@ block content
 			.form_title Изображения:
 			+form_images_upload()
 			.form_title Текстуры:
-			+form_multiple_files('attach')(accept='application/pdf,application/zip')
+			+form_multiple_images('textures')(accept='image/jpeg,image/png,image/gif')
 			.form_title Слайдер на главной:
 			select(name='main_slider')
 				option(value='false') Выкл.

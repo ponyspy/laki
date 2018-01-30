@@ -160,6 +160,30 @@ module.exports.preview = function(images, callback) {
 	});
 };
 
+module.exports.images_upload = function(obj, base_path, field_name, post, files, callback) {
+	if (files.textures && files.textures.length > 0) {
+		async.forEachOfSeries(files.textures, function(file, i, callback) {
+			var file_path = '/cdn/' + base_path + '/' + obj._id + '/' + field_name;
+			var file_name = Date.now() + '.' + mime.getExtension(file.mimetype);
+
+			mkdirp(public_path + file_path, function() {
+				gm(file.path).resize(220, false).quality(80).write(public_path + file_path + '/' + file_name, function(err) {
+					rimraf(file.path, { glob: false }, function() {
+						obj[field_name].push({
+							path: file_path + '/' + file_name,
+						});
+						callback();
+					});
+				});
+			});
+		}, function() {
+			callback(null, 'files_upload');
+		});
+	} else {
+		callback(null, false);
+	}
+};
+
 module.exports.files_upload = function(obj, base_path, field_name, post, files, callback) {
 	if (files.attach && files.attach.length > 0) {
 		async.forEachOfSeries(files.attach, function(file, i, callback) {
