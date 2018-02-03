@@ -18,16 +18,13 @@ block over
 block content
 	.buy_shops
 		.shops_title= __('Адреса магазинов')
-		.shops_list
-			each item in new Array(3)
-				.list_item
 		.shops_items
-			each item in new Array(6)
+			each shop in shops
 				.shop_item
-					.shop_city г. Москва
-					.shop_station ст. м. Проспект Мира
-					.shop_adress ул. Достоевского д3
-					.shop_apartment ТК Дубровка, ряд 9, павильон 197
-					.shop_time 8:00 - 16:20
+					.shop_city= shop.i18n.city.get(locale)
+					.shop_station= shop.i18n.station.get(locale)
+					.shop_adress= shop.i18n.adress.get(locale)
+					.shop_apartment= shop.i18n.apartment.get(locale)
+					.shop_time= shop.time
 
 	+instagram_cut()
