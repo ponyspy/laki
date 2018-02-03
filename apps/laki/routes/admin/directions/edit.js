@@ -36,7 +36,7 @@ module.exports = function(Model, Params) {
 
 			direction.status = post.status;
 			direction.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
-			direction.collects = post.collects;
+			direction.collects = post.collects.filter(function(collect) { return collect != 'none'; });
 			direction.main_columns = post.main_columns;
 			direction.sym = post.sym ? post.sym : undefined;
 
