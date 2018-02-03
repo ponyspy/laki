@@ -16,7 +16,7 @@ module.exports = function(Model, Params) {
 		var id = req.params.short_id;
 
 		Direction.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').populate('collects').exec(function(err, direction) {
-			if (err) return next(err);
+			if (!direction || err) return next(err);
 
 			Collect.aggregate([{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
 				if (err) return next(err);
