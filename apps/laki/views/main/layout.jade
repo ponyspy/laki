@@ -17,10 +17,10 @@ html
 							span= ' | '
 							a(href='/auth/logout') выход
 				.menu_block
-					a.coll(href='/#collections')= __('Коллекции')
-					a(href='/concept')= __('Концепция')
-					a(href='/blog')= __('Блог')
-					a(href='/buy')= __('Где купить?')
+					a.coll(href='/#collections'): span= __('Коллекции')
+					a(href='/concept'): span= __('Концепция')
+					a(href='/blog'): span= __('Блог')
+					a(href='/buy'): span= __('Где купить?')
 				.menu_drop
 					each span in new Array(4)
 						span
