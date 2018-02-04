@@ -2,7 +2,7 @@ $(function() {
 	$('.coll').on('click', function(e) {
 		e.preventDefault();
 
-		$('body').animate({
+		$('html, body').animate({
 			'scrollTop': $('.content_block').offset().top
 		});
 	});

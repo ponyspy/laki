@@ -9,7 +9,7 @@ mixin sim_collects(sim_items)
 						.image.main(style='background-image: url(' + sim.poster + ')')
 						if sim.poster_hover
 							.image.hover(style='background-image: url(' + sim.poster_hover + ')')
-						.quote= get_locale(sim.quote, locale)
+						.quote: span= get_locale(sim.quote, locale)
 
 mixin instagram_cut()
 	.cut.instagram

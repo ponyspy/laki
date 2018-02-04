@@ -40,7 +40,7 @@ block content
 								.image.main(style='background-image: url(' + collect.poster + ')')
 								if collect.poster_hover
 									.image.hover(style='background-image: url(' + collect.poster_hover + ')')
-								.quote= collect.i18n.quote.get(locale)
+								.quote: span= collect.i18n.quote.get(locale)
 							.collect_signature= collect.i18n.signature.get(locale)
 
 			if i == 0
