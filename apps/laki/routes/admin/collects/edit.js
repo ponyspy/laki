@@ -43,6 +43,7 @@ module.exports = function(Model, Params) {
 			collect.sym = post.sym ? post.sym : undefined;
 			collect.main_slider = post.main_slider;
 			collect.main_style = post.main_style;
+			collect.patterns_counter = post.patterns_counter;
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];
 

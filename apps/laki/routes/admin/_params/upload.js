@@ -171,6 +171,7 @@ module.exports.images_upload = function(obj, base_path, field_name, post, files,
 					rimraf(file.path, { glob: false }, function() {
 						obj[field_name].push({
 							path: file_path + '/' + file_name,
+							description: post.patterns_desc[i]
 						});
 						callback();
 					});

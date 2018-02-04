@@ -43,6 +43,8 @@ block content
 			+form_single_file('poster_hover', collect)(accept='image/jpeg,image/png,image/gif')
 			.form_title Изображения:
 			+form_images_upload(collect.images)
+			.form_title Текстур в коллекции:
+			input(type='text', name='patterns_counter', value=collect.patterns_counter)
 			.form_title Текстуры:
 			+form_multiple_images('patterns', collect)(accept='image/jpeg,image/png,image/gif')
 			.form_title Слайдер на главной:

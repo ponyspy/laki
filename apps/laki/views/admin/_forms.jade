@@ -129,13 +129,14 @@ mixin form_multiple_images(path, object)
 				span= 'удалить | '
 				input(type='checkbox', name='files_delete[]', value=image.path)
 			span &nbsp;
-			a(href=image.path, target='_blank')= 'Изображение ' + (i+1)
+			a(href=image.path, target='_blank')= image.description || 'Изображение ' + (i+1)
 			br
 		br
 	.snake_outer
 		.snake
 			input(type="button", value='-').back
 			input(type='file', name=path, accept=attributes.accept)
+			input.input(type='text', name=path + '_desc[]', placeholder='описание')
 		//- br
 		input(type="button", value='+').forward
 		br
