@@ -32,7 +32,7 @@ exports.edit_form = function(req, res) {
 		blog_title_en: function(callback) {
 			fs.writeFile(__app_root + '/static/blog_title_en.html', post.blog_title.en, callback);
 		},
-		pdf: function(callback) {
+		order_blank: function(callback) {
 			if (!file) return callback(null);
 
 			fs.rename(file.path, __glob_root + '/public/cdn/order.' + mime.getExtension(file.mimetype), callback);
