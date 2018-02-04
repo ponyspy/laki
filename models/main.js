@@ -31,6 +31,7 @@ var collectSchema = new Schema({
 	description: { type: String, trim: true, locale: true },
 	recommends: { type: String, trim: true, locale: true },
 	main_slider: Boolean,
+	main_style: String,
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
 	poster: { type: String },
 	poster_hover: { type: String },

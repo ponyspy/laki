@@ -19,7 +19,7 @@ block over
 				.swiper-button-prev.swiper-button-white
 			.swiper-wrapper
 				each slide in collects
-					.slide_item.swiper-slide(style='background-image: url(' + slide.poster + ')')
+					.slide_item.swiper-slide(class=slide.main_style, style='background-image: url(' + slide.poster + ')')
 						.slide_inner
 							.slide_title= slide.i18n.title.get(locale)
 							.slide_s_title= slide.i18n.s_title.get(locale)

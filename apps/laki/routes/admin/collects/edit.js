@@ -42,6 +42,7 @@ module.exports = function(Model, Params) {
 			collect.date = moment(post.date.date + 'T' + post.date.time.hours + ':' + post.date.time.minutes);
 			collect.sym = post.sym ? post.sym : undefined;
 			collect.main_slider = post.main_slider;
+			collect.main_style = post.main_style;
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];
 
