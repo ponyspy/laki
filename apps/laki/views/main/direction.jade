@@ -21,7 +21,7 @@ block content
 	.direction_description!= direction.i18n.description.get(locale)
 	.direction_collects
 		each collect in direction.collects
-			.collect_item
+			.collect_item(class=collect.status)
 				.collect_title= collect.i18n.title.get(locale)
 				.collect_slider
 					.swiper-container: .swiper-wrapper

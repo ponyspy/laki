@@ -5,10 +5,24 @@ module.exports = function(Model) {
 	var Collect = Model.Collect;
 
 	module.index = function(req, res, next) {
-		Direction.where('status').ne('hidden').sort('-date').populate('collects').exec(function(err, directions) {
+		var user_id = req.session.user_id;
+
+		var Query = user_id
+			? Direction.find()
+			: Direction.find().where('status').ne('hidden');
+
+		var populate_path = user_id
+			? {path: 'collects' }
+			: {path: 'collects', match: { 'status': { $ne: 'hidden' } } };
+
+		Query.sort('-date').populate(populate_path).exec(function(err, directions) {
 			if (err) return next(err);
 
-			Collect.where('main_slider').equals('true').sort('-date').exec(function(err, collects) {
+			var Query = user_id
+				? Collect.find()
+				: Collect.find().where('status').ne('hidden');
+
+			Query.where('main_slider').equals('true').sort('-date').exec(function(err, collects) {
 				if (err) return next(err);
 
 				res.render('main/index.jade', { directions: directions, collects: collects });

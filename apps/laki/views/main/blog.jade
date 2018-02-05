@@ -14,7 +14,7 @@ block content
 		.collects_title= __('О коллекциях') + ':'
 		.collects_items
 			each collect in collects
-				.collect_item(id=collect._short_id): span= collect.i18n.title.get(locale)
+				.collect_item(class=collect.status, id=collect._short_id): span= collect.i18n.title.get(locale)
 
 	.posts_block
 

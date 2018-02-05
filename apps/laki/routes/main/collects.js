@@ -13,11 +13,19 @@ module.exports = function(Model, Params) {
 
 	module.collect = function(req, res, next) {
 		var id = req.params.short_id;
+		var user_id = req.session.user_id;
 
-		Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').exec(function(err, collect) {
+		var Query = user_id
+			? Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] })
+			: Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden')
+
+		Query.exec(function(err, collect) {
 			if (!collect || err) return next(err);
 
-			Collect.aggregate([{ $match : { _id : { $ne: collect._id } } }, { $sample: { size: 3 } }]).exec(function(err, sim_items) {
+			Collect.aggregate([
+				{ $match: { status: { $ne: 'hidden' } }	},
+				{ $match: { _id : { $ne: collect._id } } },
+				{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
 				if (err) return next(err);
 
 				res.render('main/collect.jade', { collect: collect, sim_items: sim_items, get_locale: get_locale });

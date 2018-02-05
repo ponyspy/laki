@@ -1,5 +1,5 @@
 each post in posts
-	a.post_item(href='/blog/' + (post.sym ? post.sym : post._short_id)): .post_inner
+	a.post_item(class=post.status, href='/blog/' + (post.sym ? post.sym : post._short_id)): .post_inner
 		h1.post_title: span= post.i18n.title.get(locale)
 		img.post_poster(src=post.poster)
 		.post_intro!= post.i18n.intro.get(locale)

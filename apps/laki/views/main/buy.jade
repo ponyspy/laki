@@ -20,7 +20,7 @@ block content
 		.shops_title= __('Адреса магазинов')
 		.shops_items
 			each shop in shops
-				.shop_item
+				.shop_item(class=shop.status)
 					.shop_city= shop.i18n.city.get(locale)
 					.shop_station= shop.i18n.station.get(locale)
 					.shop_adress= shop.i18n.street.get(locale)

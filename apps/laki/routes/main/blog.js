@@ -8,10 +8,16 @@ module.exports = function(Model) {
 	var Collect = Model.Collect;
 
 	module.index = function(req, res, next) {
+		var user_id = req.session.user_id;
+
 		Post.distinct('collects').exec(function(err, collects) {
 			if (err) return next(err);
 
-			Collect.find({ '_id': { $in: collects } }).where('status').ne('hidden').exec(function(err, collects) {
+			var Query = user_id
+				? Collect.find({ '_id': { $in: collects } })
+				: Collect.find({ '_id': { $in: collects } }).where('status').ne('hidden');
+
+			Query.exec(function(err, collects) {
 				if (err) return next(err);
 
 				fs.readFile(__app_root + '/static/blog_title_' + req.locale + '.html', function(err, title) {
@@ -23,8 +29,13 @@ module.exports = function(Model) {
 
 	module.get_posts = function(req, res) {
 		var post = req.body;
+		var user_id = req.session.user_id;
 
-		Collect.findOne({ status: { $ne: 'hidden' }, _short_id: post.context.collect }).exec(function(err, collect) {
+		var Query = user_id
+			? Collect.findOne({ _short_id: post.context.collect })
+			: Collect.findOne({ _short_id: post.context.collect }).where('status').ne('hidden');
+
+		Query.exec(function(err, collect) {
 
 			var Query = collect
 				? Post.find({ 'collects': collect._id })
@@ -48,8 +59,13 @@ module.exports = function(Model) {
 
 	module.post = function(req, res, next) {
 		var id = req.params.short_id;
+		var user_id = req.session.user_id;
 
-		Post.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').exec(function(err, post) {
+		var Query = user_id
+			? Post.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] })
+			: Post.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden');
+
+		Query.exec(function(err, post) {
 			if (err) return next(err);
 
 			res.render('main/post.jade', { post: post });

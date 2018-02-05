@@ -46,6 +46,7 @@ var collectSchema = new Schema({
 		path: { type: String },
 		description: { type: String }
 	}],
+	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },
 	date: { type: Date, default: Date.now },
 });

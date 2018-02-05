@@ -14,11 +14,18 @@ module.exports = function(Model, Params) {
 
 	module.direction = function(req, res, next) {
 		var id = req.params.short_id;
+		var user_id = req.session.user_id;
 
-		Direction.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden').populate('collects').exec(function(err, direction) {
+		var Query = user_id
+			? Direction.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] })
+			: Direction.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden')
+
+		Query.populate('collects').exec(function(err, direction) {
 			if (!direction || err) return next(err);
 
-			Collect.aggregate([{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
+			Collect.aggregate([
+				{ $match: { status: { $ne: 'hidden' } }	},
+				{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
 				if (err) return next(err);
 
 				res.render('main/direction.jade', { direction: direction, get_locale: get_locale, sim_items: sim_items });
