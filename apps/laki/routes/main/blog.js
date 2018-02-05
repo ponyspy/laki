@@ -15,7 +15,7 @@ module.exports = function(Model) {
 
 			var Query = user_id
 				? Collect.find({ '_id': { $in: collects } })
-				: Collect.find({ '_id': { $in: collects } }).where('status').ne('hidden');
+				: Collect.find({ '_id': { $in: collects } }).where('status').nin(['hidden', 'special']);
 
 			Query.exec(function(err, collects) {
 				if (err) return next(err);
@@ -33,13 +33,17 @@ module.exports = function(Model) {
 
 		var Query = user_id
 			? Collect.findOne({ _short_id: post.context.collect })
-			: Collect.findOne({ _short_id: post.context.collect }).where('status').ne('hidden');
+			: Collect.findOne({ _short_id: post.context.collect }).where('status').nin(['hidden', 'special']);
 
 		Query.exec(function(err, collect) {
 
 			var Query = collect
 				? Post.find({ 'collects': collect._id })
 				: Post.find();
+
+			Query = user_id
+				? Query
+				: Query.where('status').ne('hidden');
 
 			Query.sort('-date').skip(+post.context.skip).limit(+post.context.limit).exec(function(err, posts) {
 				var opts = {
@@ -66,7 +70,7 @@ module.exports = function(Model) {
 			: Post.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden');
 
 		Query.exec(function(err, post) {
-			if (err) return next(err);
+			if (!post || err) return next(err);
 
 			res.render('main/post.jade', { post: post });
 		});

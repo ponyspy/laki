@@ -17,7 +17,7 @@ module.exports = function(Model, Params) {
 
 		var Query = user_id
 			? Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] })
-			: Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').ne('hidden')
+			: Collect.findOne({ $or: [ { '_short_id': id }, { 'sym': id } ] }).where('status').nin(['hidden', 'special'])
 
 		Query.exec(function(err, collect) {
 			if (!collect || err) return next(err);

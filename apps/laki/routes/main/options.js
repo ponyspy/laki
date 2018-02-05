@@ -8,7 +8,7 @@ module.exports = function(Model) {
 
 	module.sitemap = function(req, res, next) {
 
-		Collect.where('status').ne('hidden').exec(function(err, collects) {
+		Collect.where('status').nin(['hidden', 'special']).exec(function(err, collects) {
 			Direction.where('status').ne('hidden').exec(function(err, directions) {
 				var arr_directions = directions.map(function(direction) {
 					return {

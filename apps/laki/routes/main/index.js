@@ -13,7 +13,7 @@ module.exports = function(Model) {
 
 		var populate_path = user_id
 			? {path: 'collects' }
-			: {path: 'collects', match: { 'status': { $ne: 'hidden' } } };
+			: {path: 'collects', match: { 'status': { $nin: ['hidden', 'special'] } } };
 
 		Query.sort('-date').populate(populate_path).exec(function(err, directions) {
 			if (err) return next(err);
