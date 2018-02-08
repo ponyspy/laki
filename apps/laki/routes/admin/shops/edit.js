@@ -13,7 +13,6 @@ module.exports = function(Model, Params) {
 
 		Shop.findById(id).exec(function(err, shop) {
 			if (err) return next(err);
-			console.log(shop)
 
 			res.render('admin/shops/edit.jade', { shop: shop });
 		});
