@@ -6,4 +6,10 @@ $(function() {
 		$(this).toggleClass('open');
 		$('body, .maket_block').toggleClass('menu_open');
 	});
+
+	$('.back_top').on('click', function(e) {
+		$('html, body').animate({
+			'scrollTop': 0
+		}, 400);
+	});
 });

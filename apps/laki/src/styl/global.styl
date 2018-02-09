@@ -16,6 +16,25 @@ h1
 .maket_block
 	height 100%
 
+.back_top
+	position fixed
+	z-index 99999
+	bottom 0
+	width 100px
+	height 60px
+	cursor pointer
+	transition .2s linear
+	&:hover
+		background-color black
+		img
+			filter: invert(100%)
+	img
+		display block
+		width 40px
+		top 0; left 0; right 0; bottom 0;
+		margin auto
+		position absolute
+
 .special
 .hidden
 	opacity 0.5
