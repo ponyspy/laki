@@ -24,7 +24,7 @@ module.exports = function(Model, Params) {
 			if (!direction || err) return next(err);
 
 			Collect.aggregate([
-				{ $match: { status: { $ne: 'hidden' } }	},
+				{ $match: { status: { $nin: ['hidden', 'special'] } }	},
 				{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
 				if (err) return next(err);
 

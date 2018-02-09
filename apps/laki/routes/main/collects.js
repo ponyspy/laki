@@ -23,7 +23,7 @@ module.exports = function(Model, Params) {
 			if (!collect || err) return next(err);
 
 			Collect.aggregate([
-				{ $match: { status: { $ne: 'hidden' } }	},
+				{ $match: { status: { $nin: ['hidden', 'special'] } }	},
 				{ $match: { _id : { $ne: collect._id } } },
 				{ $sample: { size: 3 } }]).exec(function(err, sim_items) {
 				if (err) return next(err);
