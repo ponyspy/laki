@@ -13,7 +13,7 @@ block header_include
 	- var include_js = ['direction.js']
 
 block over
-	.over_block(style='background-image: url(' + direction.poster + ')')
+	.over_block(class=direction.main_style, style='background-image: url(' + direction.poster + ')')
 		.direction_head
 			h1.direction_title= direction.i18n.title.get(locale)
 

@@ -13,7 +13,7 @@ block header_include
 	- var include_js = ['collect.js']
 
 block over
-	.over_block(style='background-image: url(' + collect.poster + ')')
+	.over_block(class=collect.main_style, style='background-image: url(' + collect.poster + ')')
 		.collect_head
 			h1.collect_title= collect.i18n.title.get(locale)
 			.collect_quote= collect.i18n.quote.get(locale)

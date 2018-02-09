@@ -57,6 +57,7 @@ var directionSchema = new Schema({
 	collects: [{ type: ObjectId, ref: 'Collect' }],
 	poster: { type: String },
 	main_columns: Number,
+	main_style: String,
 	sym: { type: String, trim: true, index: true, unique: true, sparse: true },
 	status: String,
 	_short_id: { type: String, unique: true, index: true, sparse: true },

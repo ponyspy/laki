@@ -32,6 +32,7 @@ module.exports = function(Model, Params) {
 		direction.collects = post.collects.filter(function(collect) { return collect != 'none'; });
 		direction.main_columns = post.main_columns;
 		direction.sym = post.sym ? post.sym : undefined;
+		direction.main_style = post.main_style;
 
 		var locales = post.en ? ['ru', 'en'] : ['ru'];
 
