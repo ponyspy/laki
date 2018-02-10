@@ -25,6 +25,8 @@ block content
 			+form_text_single('title', direction)
 			.form_title Синоним:
 			input(type='text', name='sym', value=direction.sym, placeholder=direction._short_id)
+			.form_title Подзаголовок:
+			+form_text_single('s_title', direction)
 			.form_title Описание:
 			+form_text_multi('description', direction)
 			.form_title Обложка:

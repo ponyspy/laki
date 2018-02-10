@@ -18,6 +18,7 @@ block over
 			h1.direction_title= direction.i18n.title.get(locale)
 
 block content
+	.direction_s_title!= direction.i18n.s_title.get(locale)
 	.direction_description!= direction.i18n.description.get(locale)
 	.direction_collects
 		each collect in direction.collects

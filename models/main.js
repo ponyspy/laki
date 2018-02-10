@@ -53,6 +53,7 @@ var collectSchema = new Schema({
 
 var directionSchema = new Schema({
 	title: { type: String, trim: true, locale: true },
+	s_title: { type: String, trim: true, locale: true },
 	description: { type: String, trim: true, locale: true },
 	collects: [{ type: ObjectId, ref: 'Collect' }],
 	poster: { type: String },
