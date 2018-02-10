@@ -16,10 +16,13 @@ block over
 	.over_block(class=direction.main_style, style='background-image: url(' + direction.poster + ')')
 		.direction_head
 			h1.direction_title= direction.i18n.title.get(locale)
+			.direction_quote= direction.i18n.quote.get(locale)
 
 block content
-	.direction_s_title!= direction.i18n.s_title.get(locale)
-	.direction_description!= direction.i18n.description.get(locale)
+	.direction_body
+		.direction_intro!= direction.i18n.intro.get(locale)
+		.direction_description!= direction.i18n.description.get(locale)
+
 	.direction_collects
 		each collect in direction.collects
 			.collect_item(class=collect.status)
