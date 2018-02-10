@@ -22,14 +22,15 @@ block content
 	.direction_collects
 		each collect in direction.collects
 			.collect_item(class=collect.status)
-				.collect_title= collect.i18n.title.get(locale)
+				.collect_title: a(href=collect.status != 'special' ? '/collections/' + (collect.sym ? collect.sym : collect._short_id) : '#')= collect.i18n.title.get(locale)
 				.collect_slider
 					.swiper-container: .swiper-wrapper
 						each slide in collect.images
 							.slide_item.swiper-slide(style='background-image: url(' + slide.original + ')')
-					.swiper-pagination.swiper-pagination-black
-					.swiper-button-next.swiper-button-black
-					.swiper-button-prev.swiper-button-black
+					if collect.images && collect.images.length > 0
+						.swiper-pagination.swiper-pagination-black
+						.swiper-button-next.swiper-button-black
+						.swiper-button-prev.swiper-button-black
 				.collect_description!= collect.i18n.description.get(locale)
 
 	+blog_cut()

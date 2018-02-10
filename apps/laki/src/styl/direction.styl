@@ -45,11 +45,20 @@
 	margin-bottom 80px
 	.collect_item
 		margin-top 40px
+		&.special
+			opacity 1
+			.collect_title
+				pointer-events none
 		.collect_title
 			padding-top 40px
 			padding-bottom 40px
 			text-align center
 			font 42pt/42pt 'RegalTextPro Med'
+			a
+				color black
+				text-decoration none
+				&:hover
+					border-bottom 2px solid black
 		.collect_slider
 				user-select none
 				max-width 1024px
