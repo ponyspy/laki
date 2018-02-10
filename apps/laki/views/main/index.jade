@@ -30,13 +30,14 @@ block content
 	.directions_block#collections
 		each direction, i in directions
 			if direction.collects_list == 'hide'
-				a.direction_item(class=direction.status, href='/directions/' + (direction.sym ? direction.sym : direction._short_id))
+				a.direction_item.single(class=direction.status, href='/directions/' + (direction.sym ? direction.sym : direction._short_id))
 					.direction_title: span= direction.i18n.title.get(locale)
 					.direction_quote= direction.i18n.quote.get(locale)
 					.direction_image: .image_in
 						.image.main(style='background-image: url(' + direction.poster + ')')
+						.quote: span= direction.i18n.quote.get(locale)
 			else
-				.direction_item(class=direction.status)
+				.direction_item.list(class=direction.status)
 					.direction_title: a(href='/directions/' + (direction.sym ? direction.sym : direction._short_id))= direction.i18n.title.get(locale)
 					.direction_collects(class='x' + direction.main_columns)
 						each collect in direction.collects
