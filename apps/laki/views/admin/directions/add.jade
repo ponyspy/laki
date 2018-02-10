@@ -27,12 +27,18 @@ block content
 			input(type='text', name='sym')
 			.form_title Подзаголовок:
 			+form_text_single('s_title')
+			.form_title Цитата:
+			+form_text_single('quote')
 			.form_title Описание:
 			+form_text_multi('description')
 			.form_title Обложка:
 			+form_single_file('poster')(accept='image/jpeg,image/png,image/gif')
 			.form_title Коллекции:
 			+form_multiple_select('collects', collects)
+			.form_title Список коллекций:
+			select(name='collects_list')
+				option(value='show') Показать
+				option(value='hide') Скрыть
 			.form_title Колонки на главной:
 			select(name='main_columns')
 				option(name='1') 1

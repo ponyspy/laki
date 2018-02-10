@@ -29,19 +29,26 @@ block over
 block content
 	.directions_block#collections
 		each direction, i in directions
-			.direction_item(class=direction.status)
-				.direction_title: a(href='/directions/' + (direction.sym ? direction.sym : direction._short_id))= direction.i18n.title.get(locale)
-				.direction_collects(class='x' + direction.main_columns)
-					each collect in direction.collects
-						a.collect_item(class=collect.status, class=collect.poster_hover ? 'hover': '', href='/collections/' + (collect.sym ? collect.sym : collect._short_id))
-							.collect_title: span= collect.i18n.title.get(locale)
-							.collect_quote= collect.i18n.quote.get(locale)
-							.collect_image: .image_in
-								.image.main(style='background-image: url(' + collect.poster + ')')
-								if collect.poster_hover
-									.image.hover(style='background-image: url(' + collect.poster_hover + ')')
-								.quote: span= collect.i18n.quote.get(locale)
-							.collect_signature= collect.i18n.signature.get(locale)
+			if direction.collects_list == 'hide'
+				a.direction_item(class=direction.status, href='/directions/' + (direction.sym ? direction.sym : direction._short_id))
+					.direction_title: span= direction.i18n.title.get(locale)
+					.direction_quote= direction.i18n.quote.get(locale)
+					.direction_image: .image_in
+						.image.main(style='background-image: url(' + direction.poster + ')')
+			else
+				.direction_item(class=direction.status)
+					.direction_title: a(href='/directions/' + (direction.sym ? direction.sym : direction._short_id))= direction.i18n.title.get(locale)
+					.direction_collects(class='x' + direction.main_columns)
+						each collect in direction.collects
+							a.collect_item(class=collect.status, class=collect.poster_hover ? 'hover': '', href='/collections/' + (collect.sym ? collect.sym : collect._short_id))
+								.collect_title: span= collect.i18n.title.get(locale)
+								.collect_quote= collect.i18n.quote.get(locale)
+								.collect_image: .image_in
+									.image.main(style='background-image: url(' + collect.poster + ')')
+									if collect.poster_hover
+										.image.hover(style='background-image: url(' + collect.poster_hover + ')')
+									.quote: span= collect.i18n.quote.get(locale)
+								.collect_signature= collect.i18n.signature.get(locale)
 
 			if i == 0
 				+blog_cut()

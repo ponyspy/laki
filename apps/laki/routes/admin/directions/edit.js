@@ -40,6 +40,7 @@ module.exports = function(Model, Params) {
 			direction.main_columns = post.main_columns;
 			direction.sym = post.sym ? post.sym : undefined;
 			direction.main_style = post.main_style;
+			direction.collects_list = post.collects_list;
 
 			var locales = post.en ? ['ru', 'en'] : ['ru'];
 
@@ -49,6 +50,9 @@ module.exports = function(Model, Params) {
 
 				checkNested(post, [locale, 's_title'])
 					&& direction.setPropertyLocalised('s_title', post[locale].s_title, locale);
+
+				checkNested(post, [locale, 'quote'])
+					&& direction.setPropertyLocalised('quote', post[locale].quote, locale);
 
 				checkNested(post, [locale, 'description'])
 					&& direction.setPropertyLocalised('description', post[locale].description, locale);

@@ -27,12 +27,18 @@ block content
 			input(type='text', name='sym', value=direction.sym, placeholder=direction._short_id)
 			.form_title Подзаголовок:
 			+form_text_single('s_title', direction)
+			.form_title Цитата:
+			+form_text_single('quote', direction)
 			.form_title Описание:
 			+form_text_multi('description', direction)
 			.form_title Обложка:
 			+form_single_file('poster', direction)(accept='image/jpeg,image/png,image/gif')
 			.form_title Коллекции:
 			+form_multiple_select('collects', collects, direction.collects)
+			.form_title Список коллекций:
+			select(name='collects_list')
+				option(value='show') Показать
+				option(value='hide', selected= direction.collects_list == 'hide' && 'hide') Скрыть
 			.form_title Колонки на главной:
 			select(name='main_columns')
 				option(name='1', selected= direction.main_columns == 1) 1
