@@ -32,14 +32,18 @@ block content
 			.content
 				textarea.ru.editor(name='desc[ru]')= content.desc_ru
 				textarea.en.editor(name='desc[en]')= content.desc_en
-			.form_title Безопасность:
+			.form_title Приоритеты бренда:
 			.content
-				textarea.ru.editor(name='secure[ru]')= content.secure_ru
-				textarea.en.editor(name='secure[en]')= content.secure_en
+				textarea.ru.editor(name='priority[ru]')= content.priority_ru
+				textarea.en.editor(name='priority[en]')= content.priority_en
 			.form_title Стойкость:
 			.content
 				textarea.ru.editor(name='protect[ru]')= content.protect_ru
 				textarea.en.editor(name='protect[en]')= content.protect_en
+			.form_title Безопасность:
+			.content
+				textarea.ru.editor(name='secure[ru]')= content.secure_ru
+				textarea.en.editor(name='secure[en]')= content.secure_en
 			.form_title Производство:
 			.content(style='overflow: hidden;')
 				textarea.ru.editor(name='develop[ru]')= content.develop_ru

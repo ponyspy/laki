@@ -21,6 +21,12 @@ exports.edit = function(req, res) {
 		quote_en: function(callback) {
 			fs.readFile(__app_root + '/static/quote_en.html', callback);
 		},
+		priority_ru: function(callback) {
+			fs.readFile(__app_root + '/static/priority_ru.html', callback);
+		},
+		priority_en: function(callback) {
+			fs.readFile(__app_root + '/static/priority_en.html', callback);
+		},
 		secure_ru: function(callback) {
 			fs.readFile(__app_root + '/static/secure_ru.html', callback);
 		},
@@ -77,6 +83,16 @@ exports.edit_form = function(req, res) {
 			if (!post.quote.en) return callback(null);
 
 			fs.writeFile(__app_root + '/static/quote_en.html', post.quote.en, callback);
+		},
+		priority_ru: function(callback) {
+			if (!post.priority.ru) return callback(null);
+
+			fs.writeFile(__app_root + '/static/priority_ru.html', post.priority.ru, callback);
+		},
+		priority_en: function(callback) {
+			if (!post.priority.en) return callback(null);
+
+			fs.writeFile(__app_root + '/static/priority_en.html', post.priority.en, callback);
 		},
 		secure_ru: function(callback) {
 			if (!post.secure.ru) return callback(null);

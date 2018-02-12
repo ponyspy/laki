@@ -22,6 +22,6 @@ mixin blog_cut(factor)
 	//- factor = 2 false
 	.cut.blog
 		if Math.random() >= 0.5 * ((factor != undefined) ? factor : 1)
-			span!= __('Рассказываю о создании коллекций и приглашаю к обсуждению в свой <a href="/blog">блог</a>')
+			span!= __('Читайте больше в экспертном <a href="/blog">блоге</a>')
 		else
-			span!= __('Читайте экспертный <a href="/blog">блог</a> Елены Латаш')
+			span!= __('Подробно о коллекциях — в экспертном <a href="/blog">блоге</a>')

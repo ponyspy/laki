@@ -6,12 +6,8 @@
 	"Где купить?": "Where to buy?",
 	"Приобрести": "Buy",
 	"оттенков в коллекции": "shades in collection",
-	"Рекомендации по нанесению": "Application recommendations",
-	"Рассказываю о создании коллекций и приглашаю к обсуждению в свой <a href=\"/blog\">блог</a>": "Here I say about the creation of collections and invite you for discussion in my <a href=\"/blog\">blog</a>",
 	"Другие коллекции": "Other collections",
-	"xDance тм является зарегистрированным товарным знаком ООО «ОЛБО».": "xDance tm is a registered trademark of OLBO, LLC.",
 	"Все права защищены.": "All rights reserved.",
-	"Читайте экспертный <a href=\"/blog\">блог</a> Елены Латаш": "Read an expert <a href=\"/blog\">blog</a> of Helen Latash",
 	"Контактный телефон для оптовиков:": "Contact phone number for wholesale dealers:",
 	"Бланк заказа": "Order application form",
 	"Адреса магазинов": "Store list",
@@ -19,7 +15,12 @@
 	"Безопасность": "Safety",
 	"Стойкость": "Toughness",
 	"Производство": "Production",
-	"автор проекта": "автор проекта",
-	"О коллекциях": "О коллекциях",
-	"Еще": "More"
+	"автор проекта": "project author",
+	"О коллекциях": "About collections",
+	"Еще": "More",
+	"Подробно о коллекциях — в экспертном <a href=\"/blog\">блоге</a>": "Подробно о коллекциях — в экспертном <a href=\"/blog\">блоге</a>",
+	"xDance тм является зарегистрированным товарным знаком.": "xDance тм является зарегистрированным товарным знаком.",
+	"Читайте больше в экспертном <a href=\"/blog\">блоге</a>": "Читайте больше в экспертном <a href=\"/blog\">блоге</a>",
+	"Приоритеты бренда": "Приоритеты бренда",
+	"Рекомендации по использованию": "Application recommendations"
 }
