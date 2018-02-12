@@ -31,7 +31,7 @@ block content
 					.swiper-container: .swiper-wrapper
 						each slide in collect.images
 							.slide_item.swiper-slide(style='background-image: url(' + slide.original + ')')
-					if collect.images && collect.images.length != 0
+					if collect.images && collect.images.length > 1
 						.swiper-pagination.swiper-pagination-black
 						.swiper-button-next.swiper-button-black
 						.swiper-button-prev.swiper-button-black
