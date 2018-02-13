@@ -23,6 +23,11 @@ module.exports = function() {
 					callback(null, content || '');
 				});
 			},
+			priority: function(callback) {
+				fs.readFile(__app_root + '/static/priority_' + req.locale + '.html', function(err, content) {
+					callback(null, content || '');
+				});
+			},
 			secure: function(callback) {
 				fs.readFile(__app_root + '/static/secure_' + req.locale + '.html', function(err, content) {
 					callback(null, content || '');
