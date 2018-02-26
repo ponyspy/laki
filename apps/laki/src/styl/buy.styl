@@ -51,9 +51,28 @@
 	padding-right 20px
 	margin-bottom 80px
 	.list_title
-		font 12pt/14pt 'Gerbera'
+		font 16pt/18pt 'RegalTextPro Med'
 		margin-bottom 20px
+		span
+			&:after
+				content ''
+				display inline-block
+				vertical-align middle
+				margin-left 15px
+				background-position center
+				background-repeat no-repeat
+				background-size contain
+				transform rotate(90deg)
+				background-image url('/stuff/laki/icons/arrow_list.svg')
+				width 12px
+				height 12px
+			&:hover
+				cursor pointer
+				border-bottom 2px solid black
 	.list_items
+		display none
+		&.show
+			display block
 		.list_item
 			font 20pt/24pt 'RegalTextPro RegBold'
 			display inline-block

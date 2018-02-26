@@ -17,8 +17,14 @@ $(function() {
 		$('<div>', {'class':'list_item', 'text': city}).appendTo('.list_items');
 	});
 
+	$('.list_title').on('click', function() {
+		$('.list_items').toggleClass('show');
+	});
+
 	$(document).on('click', '.list_item', function(e) {
 		var $this = $(this);
+
+		$('.list_items').removeClass('show');
 
 		if ($this.hasClass('active')) {
 			$this.removeClass('active');
