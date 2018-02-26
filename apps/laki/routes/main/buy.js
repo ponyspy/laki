@@ -15,7 +15,7 @@ module.exports = function(Model) {
 				? Shop.find()
 				: Shop.find().where('status').ne('hidden');
 
-			Query.exec(function(err, shops) {
+			Query.sort('-date').exec(function(err, shops) {
 				if (err) return next(err);
 
 				res.render('main/buy.jade', { shops: shops, phone: phone });
