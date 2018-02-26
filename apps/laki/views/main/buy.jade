@@ -13,6 +13,7 @@ block header_include
 block over
 	.over_block: .buy_head
 		.buy_phone= __('Контактный телефон для оптовиков:') + ' ' + phone
+		.buy_email: a(href='mailto:' + email)= email
 		a.buy_blank(href='/cdn/order.xls')= __('Бланк заказа')
 
 block content

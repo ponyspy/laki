@@ -7,6 +7,9 @@ exports.edit = function(req, res) {
 		phone: function(callback) {
 			fs.readFile(__app_root + '/static/phone.html', callback);
 		},
+		email: function(callback) {
+			fs.readFile(__app_root + '/static/email.html', callback);
+		},
 		blog_title_ru: function(callback) {
 			fs.readFile(__app_root + '/static/blog_title_ru.html', callback);
 		},
@@ -25,6 +28,9 @@ exports.edit_form = function(req, res) {
 	async.series({
 		phone: function(callback) {
 			fs.writeFile(__app_root + '/static/phone.html', post.phone, callback);
+		},
+		email: function(callback) {
+			fs.writeFile(__app_root + '/static/email.html', post.email, callback);
 		},
 		blog_title_ru: function(callback) {
 			fs.writeFile(__app_root + '/static/blog_title_ru.html', post.blog_title.ru, callback);

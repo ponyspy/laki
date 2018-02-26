@@ -11,14 +11,18 @@ module.exports = function(Model) {
 		fs.readFile(__app_root + '/static/phone.html', function(err, phone) {
 			if (err) return next(err);
 
-			var Query = user_id
-				? Shop.find()
-				: Shop.find().where('status').ne('hidden');
-
-			Query.sort('-date').exec(function(err, shops) {
+			fs.readFile(__app_root + '/static/email.html', function(err, email) {
 				if (err) return next(err);
 
-				res.render('main/buy.jade', { shops: shops, phone: phone });
+				var Query = user_id
+					? Shop.find()
+					: Shop.find().where('status').ne('hidden');
+
+				Query.sort('-date').exec(function(err, shops) {
+					if (err) return next(err);
+
+					res.render('main/buy.jade', { shops: shops, phone: phone, email: email });
+				});
 			});
 		});
 	};
