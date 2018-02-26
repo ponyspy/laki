@@ -18,6 +18,9 @@ block over
 block content
 	.buy_shops
 		.shops_title= __('Адреса магазинов')
+		.shops_list
+			.list_title Выберите город:
+			.list_items
 		.shops_items
 			each shop in shops
 				.shop_item(class=shop.status)
