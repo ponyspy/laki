@@ -29,11 +29,12 @@ $(function() {
 		if ($this.hasClass('active')) {
 			$this.removeClass('active');
 			$('.shop_item').show();
+			$('.list_title').children('span').text($('.list_title').attr('back-title'));
 		} else {
-			$('.list_item').removeClass('active').filter($this).addClass('active');
-
 			var name = $this.text();
 
+			$('.list_item').removeClass('active').filter($this).addClass('active');
+			$('.list_title').children('span').text(name);
 			$('.shop_item').hide().each(function(i, item) {
 				var $this = $(item);
 
