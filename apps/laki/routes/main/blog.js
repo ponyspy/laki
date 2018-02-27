@@ -15,7 +15,7 @@ module.exports = function(Model) {
 
 			var Query = user_id
 				? Collect.find({ '_id': { $in: collects } })
-				: Collect.find({ '_id': { $in: collects } }).where('status').nin(['hidden', 'special']);
+				: Collect.find({ '_id': { $in: collects } }).where('status').ne('hidden');
 
 			Query.exec(function(err, collects) {
 				if (err) return next(err);
@@ -33,7 +33,7 @@ module.exports = function(Model) {
 
 		var Query = user_id
 			? Collect.findOne({ _short_id: post.context.collect })
-			: Collect.findOne({ _short_id: post.context.collect }).where('status').nin(['hidden', 'special']);
+			: Collect.findOne({ _short_id: post.context.collect }).where('status').ne('hidden');
 
 		Query.exec(function(err, collect) {
 
