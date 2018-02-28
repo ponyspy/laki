@@ -36,4 +36,4 @@ block content
 				option(value='base') Обычный
 				option(value='hidden', selected= shop.status == 'hidden' && 'hidden') Скрытый
 			.form_title Дата публикации:
-			+form_date('date')
+			+form_date('date', shop.date)
