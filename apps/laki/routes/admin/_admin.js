@@ -40,6 +40,7 @@ module.exports = (function() {
 	router.use('/posts', checkAuth, upload.fields([ { name: 'poster' } ]), admin.posts);
 	router.use('/users', checkAuth, admin.users);
 
+	router.post('/preview', checkAuth, admin.options.dump);
 	router.post('/preview', checkAuth, upload.single('image'), admin.options.preview);
 
 	return router;
