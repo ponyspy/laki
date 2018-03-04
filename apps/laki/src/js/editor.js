@@ -30,6 +30,18 @@ $(function() {
 							image: '\uf0cd',
 							hotkey: 'u'
 					},
+					alignleft: {
+							title: 'Left',
+							image: '\uf036',
+					},
+					aligncenter: {
+							title: 'Center',
+							image: '\uf037',
+					},
+					alignright: {
+							title: 'Right',
+							image: '\uf038',
+					},
 					removeformat: {
 							title: 'Remove format',
 							image: '\uf12d'
