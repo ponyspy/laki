@@ -16,7 +16,7 @@
     "jade": "^1.7.0",
     "mime": "^2.2.0",
     "mkdirp": "^0.5.1",
-    "moment": "^2.20.1",
+    "moment": "^2.29.4",
     "mongoose": "^5.0.7",
     "mongoose-bcrypt": "^1.5.0",
     "mongoose-locale": "github:ponyspy/mongoose-locale",
